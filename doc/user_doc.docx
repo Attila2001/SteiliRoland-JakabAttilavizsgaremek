@@ -1,0 +1,14 @@
+1. Mit csinál a program, ki a célközönség
+    Egy működőképes komplet forum készítése aminek segítségével sikeresen teljesítjük az elvárt vizsgakövetelményeket.
+2. Futási környezet
+    lényegében bármilyen számítógépen amin van internet működik mivel ez egy webes fórum.
+    telefonon szintúgy elegendő egy olyan ami már fel tud csatlakozni a wifi hálózatra
+
+3. Telepítés
+4. Használat
+    be írod a böngészőbe az oldal nevét és megnyitod
+a. CLI, GUI
+b. bemenő adatok
+c. futtatásra példa
+5. Előforduló hibák futtatáskor, hibaüzenetek
+6. Korlátok (memória, fájlméret, stb)

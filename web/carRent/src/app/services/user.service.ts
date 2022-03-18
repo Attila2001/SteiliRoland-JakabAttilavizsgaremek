@@ -41,9 +41,7 @@ export class UserService {
 
   getUserId() {
     let userId = parseInt(
-      this.jwtHelper.decodeToken(this.token?.toString())[
-        'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'
-      ]
+      this.jwtHelper.decodeToken(this.token?.toString())
     );
     return userId;
   }

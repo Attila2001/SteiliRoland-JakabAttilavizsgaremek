@@ -21,10 +21,6 @@ use App\Http\Controllers\PropulsionController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 Route::group(["middleware" => ["auth:sanctum"]], function () {
     Route::post('/logout', [AuthController::class, "logout"]);
 
@@ -33,19 +29,19 @@ Route::group(["middleware" => ["auth:sanctum"]], function () {
     Route::delete('/brands/{id}', [BrandController::class, 'delete']);
 
     Route::post('/colors', [ColorController::class, 'store']);
-    Route::put('/colors/{color}', [ColorController::class, 'update']);
+    Route::put('/colors/{id}', [ColorController::class, 'update']);
     Route::delete('/colors/{id}', [ColorController::class, 'delete']);
 
     Route::post('/cars', [CarController::class, 'create']);
-    Route::put('/cars/{car}', [CarController::class, 'update']);
+    Route::put('/cars/{id}', [CarController::class, 'update']);
     Route::delete('/cars/{id}', [CarController::class, 'delete']);
 
     Route::post('/rents', [RentController::class, 'create']);
-    Route::put('/rents/{rent}', [RentController::class, 'update']);
+    Route::put('/rents/{id}', [RentController::class, 'update']);
     Route::delete('/rents/{id}', [RentController::class, 'delete']);
 
     Route::post('/renters', [RenterController::class, 'create']);
-    Route::put('/renters/{renter}', [RenterController::class, 'update']);
+    Route::put('/renters/{id}', [RenterController::class, 'update']);
     Route::delete('/renters/{id}', [RenterController::class, 'delete']);
 });
 Route::post('/login', [AuthController::class, "login"]);

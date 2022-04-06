@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gearbox;
-class GearboxController extends Controller
+class GearboxController extends BaseController
 {
     public function index() {
         try {

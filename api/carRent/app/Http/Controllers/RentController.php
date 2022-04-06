@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\Rent;
-class RentController extends Controller
+class RentController extends BaseController
 {
     public function index(){
         try {
             $renters=Rent::all();
             return $this->sendResponse($renters, "Bérlések betöltve.");
         } catch (\Throwable $th) {
-            return $this->sendError("Bérlések betöltése sikertelen", $th);
+           return $this->sendError("Bérlések betöltése sikertelen", $th);
         }
     }
     public function create(){

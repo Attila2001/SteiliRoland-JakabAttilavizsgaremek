@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Propulsion;
-class PropulsionController extends Controller
+class PropulsionController extends BaseController
 {
     public function index() {
         try {

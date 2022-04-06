@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\Renter;
-class RenterController extends Controller
+class RenterController extends BaseController
 {
     public function index()
     {

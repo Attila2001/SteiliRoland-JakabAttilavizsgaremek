@@ -5,7 +5,7 @@ use Validator;
 use App\Models\Car;
 use Illuminate\Http\Request;
 
-class CarController extends Controller
+class CarController extends BaseController
 {
     public function index(){
         try {

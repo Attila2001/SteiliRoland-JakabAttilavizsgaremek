@@ -1,0 +1,19 @@
+
+<div class="container">
+    <h1>Belépés</h1>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="mb-3">
+      <label for="user" class="form-label">Név</label>
+      <input type="text" class="form-control" id="user" aria-describedby="userHelp" formControlName="user" placeholder="név">
+      <small *ngIf="loginForm.controls['user'].invalid && loginForm.controls['user'].touched">név kötelező</small>
+
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Jelszó</label>
+      <input type="password" class="form-control" id="password" formControlName="pass"placeholder="jelszó">
+      <small *ngIf="loginForm.controls['pass'].invalid && loginForm.controls['pass'].touched">jelszó kötelező</small>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Bejelentkezés</button>
+  </form>
+</div>

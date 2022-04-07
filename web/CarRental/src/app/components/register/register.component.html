@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Regisztráció</h1>
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="mb-3">
+        <label for="user" class="form-label">Név</label>
+        <input type="text" class="form-control" id="user" aria-describedby="userHelp" formControlName="user"placeholder="név">
+        <small *ngIf="registerForm.controls['user'].invalid && registerForm.controls['user'].touched">név kötelező</small>
+      </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" placeholder="valami@valami.hu/com">
+      <small *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">email kötelező</small>
+
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Jelszó</label>
+      <input type="password" class="form-control" id="password" formControlName="pass" placeholder="jelszó">
+      <small *ngIf="registerForm.controls['pass'].invalid && registerForm.controls['pass'].touched">jelszó kötelező</small>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Regisztráció</button>
+  </form>
+</div>

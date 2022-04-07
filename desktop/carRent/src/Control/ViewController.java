@@ -81,9 +81,46 @@ public class ViewController {
     
     private void delete() {
         
-        System.out.println( "delete gomb" );
+       
+       switch (carFrm.getTableTb().getSelectedIndex()) {
+           case 0 ->{
+               deleteRenters();
+           }
+           case 1 ->{
+               deleteCars();
+           }
+           case 2 ->{
+               deleteRents();
+           }
+       }
     }
-    
+    private void deleteRenters(){
+        int row = carFrm.getRenterTbl().getSelectedRow();
+        String value = carFrm.getRenterTbl().getModel().getValueAt(row, 4).toString();
+        APICtr.setId(value);
+        
+        APICtr.DeleteRenter();
+                
+        initTables();
+    }
+    private void deleteCars(){
+        int row = carFrm.getCarTbl().getSelectedRow();
+        String value = carFrm.getCarTbl().getModel().getValueAt(row, 6).toString();
+        APICtr.setId(value);
+        
+        APICtr.DeleteCar();
+                
+        initTables();
+    }
+    private void deleteRents(){
+        int row = carFrm.getRenterTbl().getSelectedRow();
+        String value = carFrm.getRenterTbl().getModel().getValueAt(row, 4).toString();
+        APICtr.setId(value);
+        
+        APICtr.DeleteRent();
+                
+        initTables();
+    }
     private void exit() {
         
         System.exit( 0 );

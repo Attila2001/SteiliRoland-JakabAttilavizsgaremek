@@ -27,7 +27,7 @@ class AuthController extends BaseController
         return $this->sendResponse($success,"Sikeres regisztráció");
     }
     public function login(Request $request){
-        if(Auth::attempt(["email"=>$request->email,"password" =>$request->password])){
+        if(Auth::attempt(["name"=>$request->name,"password" =>$request->password])){
             $authUser = Auth::user();
             $success["token"]= $authUser->createToken("myapitoken")->plainTextToken;
             $success["name"] = $authUser->name;

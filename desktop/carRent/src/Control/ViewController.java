@@ -96,7 +96,7 @@ public class ViewController {
     }
     private void deleteRenters(){
         int row = carFrm.getRenterTbl().getSelectedRow();
-        String value = carFrm.getRenterTbl().getModel().getValueAt(row, 4).toString();
+        String value = carFrm.getRenterTbl().getModel().getValueAt(row, 0).toString();
         APICtr.setId(value);
         
         APICtr.DeleteRenter();
@@ -105,7 +105,7 @@ public class ViewController {
     }
     private void deleteCars(){
         int row = carFrm.getCarTbl().getSelectedRow();
-        String value = carFrm.getCarTbl().getModel().getValueAt(row, 6).toString();
+        String value = carFrm.getCarTbl().getModel().getValueAt(row, 0).toString();
         APICtr.setId(value);
         
         APICtr.DeleteCar();
@@ -113,8 +113,9 @@ public class ViewController {
         initTables();
     }
     private void deleteRents(){
-        int row = carFrm.getRenterTbl().getSelectedRow();
-        String value = carFrm.getRenterTbl().getModel().getValueAt(row, 4).toString();
+        int row = carFrm.getRentTbl().getSelectedRow();
+        String value = carFrm.getRentTbl().getModel().getValueAt(row, 0).toString();
+        System.out.println(value);
         APICtr.setId(value);
         
         APICtr.DeleteRent();
@@ -122,7 +123,7 @@ public class ViewController {
         initTables();
     }
     private void exit() {
-        
+        APICtr.Logout();
         System.exit( 0 );
     }
 

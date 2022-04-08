@@ -69,7 +69,7 @@ public class API_Model {
     
         URL url = new URL("http://localhost:8000/api/logout");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        
+
         conn.setRequestProperty("Authorization", "Bearer " +token);
         conn.setRequestMethod("POST");
         conn.setDoOutput(true);
@@ -120,7 +120,7 @@ public class API_Model {
         for(RenterModel rentermodel: list) {
             
             Vector<Object> renter = new Vector<>();
-            
+            renter.add(rentermodel.id);
             renter.add(rentermodel.name);
             renter.add(rentermodel.email);
             renter.add(rentermodel.phone);
@@ -172,7 +172,7 @@ public class API_Model {
         for(CarModel carmodel: list) {
             
             Vector<Object> car = new Vector<>();
-            
+            car.add(carmodel.id);
             car.add(carmodel.platenumber);
             car.add(carmodel.doornumber);
             car.add(carmodel.modelyear);
@@ -225,7 +225,7 @@ public class API_Model {
         for(RentModel rentmodel: list) {
             
             Vector<Object> rent = new Vector<>();
-            
+            rent.add(rentmodel.id);
             rent.add(rentmodel.startdate);
             rent.add(rentmodel.enddate);
             rent.add(rentmodel.deposit);

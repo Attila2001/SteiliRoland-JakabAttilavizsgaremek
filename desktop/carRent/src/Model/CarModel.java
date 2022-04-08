@@ -2,6 +2,7 @@
 package Model;
 
 public class CarModel {
+    Integer id;
     String platenumber;
     Integer doornumber;
     Integer modelyear;
@@ -10,7 +11,8 @@ public class CarModel {
     Integer propulsion_id;
     Integer gearbox_id;
 
-    public CarModel(String platenumber,Integer doornumber,Integer modelyear,Integer brand_id,Integer color_id,Integer propulsion_id,Integer gearbox_id) {
+    public CarModel(Integer id,String platenumber,Integer doornumber,Integer modelyear,Integer brand_id,Integer color_id,Integer propulsion_id,Integer gearbox_id) {
+        this.id=id;
         this.platenumber = platenumber;
         this.doornumber = doornumber;
         this.modelyear = modelyear;

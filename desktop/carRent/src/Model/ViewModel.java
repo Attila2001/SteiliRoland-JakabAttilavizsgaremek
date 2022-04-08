@@ -8,7 +8,7 @@ public class ViewModel {
          public Vector<String> getRenterColumnNames(){
         
         Vector<String> columnNames = new Vector<>();
-        
+        columnNames.add( "Id" );
         columnNames.add( "Név" );
         columnNames.add( "Email" );
         columnNames.add( "Telefon" );
@@ -20,7 +20,7 @@ public class ViewModel {
      public Vector<String> getCarColumnNames(){
         
         Vector<String> columnNames = new Vector<>();
-
+        columnNames.add( "Id" );
         columnNames.add( "Rendszám" );
         columnNames.add( "Ajtószám" );
         columnNames.add( "Évjárat" );
@@ -34,7 +34,7 @@ public class ViewModel {
      public Vector<String> getRentColumnNames(){
         
         Vector<String> columnNames = new Vector<>();
-        
+        columnNames.add( "Id" );
         columnNames.add( "Kölcsönzés kezdete" );
         columnNames.add( "Kölcsönzés vége" );
         columnNames.add( "Letét" );

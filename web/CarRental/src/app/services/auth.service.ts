@@ -1,13 +1,3 @@
-/*
-* File: auth.service.ts
-* Author: Madarász Dávid
-* Copyright: 2022, Madarász Dávid
-* Group: Szoft II/N
-* Date: 2022-02-24
-* Github: https://github.com/afriyy/
-* Licenc: GNU GPL
-*/
-
 import { Injectable } from '@angular/core';
 import { LoginComponent } from '../components/login/login.component';
 import { RegisterComponent } from '../components/register/register.component';
@@ -17,7 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  host = 'http://localhost:8000/api/'
+  host = 'http://localhost:8000/api/carrent'
   constructor(private http: HttpClient) {}
   login(user:string,pass:string){
     let endpoint = 'login';
@@ -39,6 +29,7 @@ export class AuthService {
     let endpoint = 'register';
     let url = this.host + endpoint;
     let authData = {
+
       name: user,
       email: email,
       password: pass,
@@ -56,7 +47,7 @@ export class AuthService {
   isLoggedIn() {
     if (localStorage.getItem('currentUser') === null) {
       return false;
-    }    
+    }
     let data:any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(data);
     let token = currentUser.token;

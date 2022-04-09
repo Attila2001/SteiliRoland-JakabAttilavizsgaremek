@@ -29,14 +29,14 @@ export class VehiclesComponent implements OnInit {
     });
   }
   fetchData(){
-    let url = "http://localhost:8000/api/vehicles"
+    let url = "http://localhost:8000/api/"
     this.http.get<any>(url).subscribe(
       res => {
         this.vehicleList = res;
       });
   }
   newCar(){
-    let url = "http://localhost:8000/api/CarRent";
+    let url = "http://localhost:8000/api/";
     let carData = {
       plate: this.vehicleForm.value.plate,
       brand: this.vehicleForm.value.brand,

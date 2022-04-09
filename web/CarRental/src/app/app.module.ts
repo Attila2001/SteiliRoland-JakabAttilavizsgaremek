@@ -9,6 +9,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { MainComponent } from './components/main/main.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
     LoginComponent,
     RegisterComponent,
     VehiclesComponent,
+    MainComponent,
 
   ],
   imports: [

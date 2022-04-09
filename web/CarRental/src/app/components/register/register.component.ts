@@ -21,23 +21,29 @@ this.registerForm = new FormGroup({
   user: new FormControl('',Validators.required),
   email: new FormControl('',Validators.required),
   pass: new FormControl('',Validators.required),
+  pass2: new FormControl('',Validators.required),
 });
   }
   register(){
     let user = this.registerForm.value.user;
     let email = this.registerForm.value.email;
     let pass = this.registerForm.value.pass;
-    this.auth.register(user,email,pass)
-    .subscribe((res: { success: any; data: { token: any; name: any; }; }) =>{
-      if (res.success) {
-        console.log(res.success);
-        localStorage.setItem('currentUser',
-        JSON.stringify({token: res.data.token, name: res.data.name})
-        );
-        this.router.navigate(['vehicles']);
-      }else{
-        alert("A belépés sikertelen!");
-      }
-    });
+    let pass2 = this.registerForm.value.pass2;
+    this.auth.register(user,email,pass,pass2)
+    if(pass != pass2){
+      alert("A jelszavak nem egyeznek!")
+      this.registerForm.reset();
+    }else{
+      this.auth.register(user,email, pass, pass2,)
+      .subscribe(
+        (res) => {
+          alert("Sikeres regisztráció!");
+          this.router.navigate(['']);
+        }, (error) => {
+          console.error(error);
+          alert("A regisztráció sikertelen!");
+          this.registerForm.reset();
+        })
+    }
   }
 }

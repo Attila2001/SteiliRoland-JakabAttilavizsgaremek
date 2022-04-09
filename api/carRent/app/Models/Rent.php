@@ -15,5 +15,5 @@ class Rent extends Model
         "renter_id",
         "car_id"
     ];
-    public $timestamp = false;
+    public $timestamps = false;
 }

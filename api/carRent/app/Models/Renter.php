@@ -15,5 +15,5 @@ class Renter extends Model
         "address",
         "identify"
     ];
-    public $timestamp = false;
+    public $timestamps = false;
 }

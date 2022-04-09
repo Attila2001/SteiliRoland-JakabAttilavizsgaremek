@@ -76,7 +76,17 @@ public class ViewController {
 
     private void edit() {
         
-        System.out.println( "edit gomb" );
+        switch (carFrm.getTableTb().getSelectedIndex()) {
+           case 0 ->{
+               updateRenters();
+           }
+           case 1 ->{
+               updateCars();
+           }
+           case 2 ->{
+               updateRents();
+           }
+        }
     }
     
     private void delete() {
@@ -93,6 +103,35 @@ public class ViewController {
                deleteRents();
            }
        }
+    }
+    private void updateRenters(){
+        int row = carFrm.getRenterTbl().getSelectedRow();
+        String value = carFrm.getRenterTbl().getModel().getValueAt(row, 0).toString();
+        APICtr.setId(value);
+        
+        APICtr.UpdateRenter();
+                
+        initTables();
+    }
+    private void updateCars(){
+        int row = carFrm.getCarTbl().getSelectedRow();
+        String value = carFrm.getCarTbl().getModel().getValueAt(row, 0).toString();
+        APICtr.setId(value);
+        
+        APICtr.UpdateCar();
+                
+        initTables();
+    }
+    private void updateRents(){
+        int row = carFrm.getRentTbl().getSelectedRow();
+        String value = carFrm.getRentTbl().getModel().getValueAt(row, 0).toString();
+        System.out.println(value);
+        APICtr.setId(value);
+        
+        APICtr.UpdateRent();
+                
+        initTables();
+        
     }
     private void deleteRenters(){
         int row = carFrm.getRenterTbl().getSelectedRow();

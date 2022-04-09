@@ -22,7 +22,14 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        DB::table('users')->insert(array(
+            'id'=>'1',
+            'name'=>'Roland',
+            'password'=>bcrypt('Roland'),
+            'email'=>'roland@carrent.hu'
+        ));
     }
+    
 
     /**
      * Reverse the migrations.

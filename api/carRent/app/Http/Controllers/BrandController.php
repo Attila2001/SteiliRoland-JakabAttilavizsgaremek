@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use Validator;
 class BrandController extends BaseController
 {
     
@@ -15,7 +16,7 @@ class BrandController extends BaseController
             return $this->sendError("Márkák betöltése sikertelen", $th);
         }
     }
-    public function show( Request $request, $id ) { 
+    public function show( $id ) { 
         try {
             $brand = Brand::find( $id );
             return $this->sendResponse($brand, "Márka betöltése sikeres.");
@@ -23,7 +24,10 @@ class BrandController extends BaseController
             return $this->sendResponse("Márka betöltése sikertelen.",$th);
         }
     }
-    public function store( Request $request ) {
+    public function create( Request $request ) {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required'
+        ]);
         try {
             $brand = Brand::create($request->all());
             return $this->sendResponse($brand, "Márka létrehozása sikeres");

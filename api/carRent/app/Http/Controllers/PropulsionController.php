@@ -15,7 +15,7 @@ class PropulsionController extends BaseController
         }
     }
 
-    public function show( Request $request, $id ) { 
+    public function show( $id ) { 
         try {
             $propulsion = Propulsion::find( $id );
             return $this->sendResponse($propulsion, "Meghajtás típusának betöltése sikeres.");

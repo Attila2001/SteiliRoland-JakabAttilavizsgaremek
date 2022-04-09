@@ -15,7 +15,7 @@ class RentController extends BaseController
            return $this->sendError("Bérlések betöltése sikertelen", $th);
         }
     }
-    public function create(){
+    public function create(Request $request){
         $validator = Validator::make($request->all(), [
             'startdate' => 'required',
             'enddate' => 'required',
@@ -41,7 +41,7 @@ class RentController extends BaseController
             return $this->sendError("Bérlés betöltése sikertelen", $th);
         }
     }
-    public function update($id){
+    public function update(Request $request,$id){
         try {
             $rent=Rent::find($id);
             $rent->update( $request->all() );

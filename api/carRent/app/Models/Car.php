@@ -17,5 +17,5 @@ class Car extends Model
         "brand_id",
         "color_id"
     ];
-    public $timestamp = false;
+    public $timestamps = false;
 }

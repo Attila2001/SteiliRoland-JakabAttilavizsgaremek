@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Models\Car;
 use Illuminate\Http\Request;
-
 class CarController extends BaseController
 {
     public function index(){
@@ -15,13 +14,12 @@ class CarController extends BaseController
             return $this->sendError("Autók betöltése sikertelen", $th);
         }
     }
-    public function create(){
+    public function create(Request $request){
         $validator = Validator::make($request->all(), [
             'platenumber' => 'required',
             'doornumber' => 'required',
-            'deposit' => 'required',
             'modelyear' => 'required',
-            'propulsion_id' => 'required',
+            'propulsion_id' =>'required',
             'gearbox_id' => 'required',
             'brand_id' => 'required',
             'color_id' => 'required'
@@ -44,7 +42,7 @@ class CarController extends BaseController
             return $this->sendError("Autó betöltése sikertelen", $th);
         }
     }
-    public function update($id){
+    public function update(Request $request,$id){
         try {
             $car=Car::find($id);
             $car->update( $request->all() );

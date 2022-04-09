@@ -55,6 +55,18 @@ public class API_Controller {
         boolean success = APIMdl.tryDeleteRents(token, id);
         return success;
     }
+    public Boolean UpdateRenter(){
+        boolean success = APIMdl.tryUpdateRenters(token, id);
+        return success;
+    }
+    public Boolean UpdateCar(){
+        boolean success = APIMdl.tryUpdateCars(token, id);
+        return success;
+    }
+    public Boolean UpdateRent(){
+        boolean success = APIMdl.tryUpdateRents(token, id);
+        return success;
+    }
     
     
 }

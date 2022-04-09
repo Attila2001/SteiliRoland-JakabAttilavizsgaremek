@@ -15,7 +15,7 @@ class GearboxController extends BaseController
         }
     }
 
-    public function show( Request $request, $id ) { 
+    public function show( $id ) { 
         try {
             $gearbox = Gearbox::find( $id );
             return $this->sendResponse($gearbox, "Váltó típusának betöltése sikeres.");

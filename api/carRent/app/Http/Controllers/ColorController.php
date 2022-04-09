@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Color;
+use Validator;
 class ColorController extends BaseController
 {
     public function index() {
@@ -14,7 +15,7 @@ class ColorController extends BaseController
             return $this->sendError("Színek betöltése sikertelen", $th);
         }
     }
-    public function show( Request $request, $id ) { 
+    public function show($id ) { 
         try {
             $color = Color::find( $id );
             return $this->sendResponse($color, "Szín betöltése sikeres.");
@@ -22,7 +23,13 @@ class ColorController extends BaseController
             return $this->sendResponse("Szín betöltése sikertelen.",$th);
         }
     }
-    public function store( Request $request ) {
+    public function create( Request $request ) {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return $this->sendError("Hibás érvényesítés", $validator->errors());
+        }
         try {
             $color = Color::create($request->all());
             return $this->sendResponse($color, "Szín létrehozása sikeres");

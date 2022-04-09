@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\Renter;
+use App\Http\Resources\Renter as RenterResource;
 class RenterController extends BaseController
 {
     public function index()
@@ -17,7 +18,7 @@ class RenterController extends BaseController
         }
             
     }
-    public function create(){
+    public function create(Request $request){
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',

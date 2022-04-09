@@ -24,11 +24,11 @@ use App\Http\Controllers\PropulsionController;
 Route::group(["middleware" => ["auth:sanctum"]], function () {
     Route::post('/logout', [AuthController::class, "logout"]);
 
-    Route::post('/brands', [BrandController::class, 'store']);
+    Route::post('/brands', [BrandController::class, 'create']);
     Route::put('/brands/{id}', [BrandController::class, 'update']);
     Route::delete('/brands/{id}', [BrandController::class, 'delete']);
 
-    Route::post('/colors', [ColorController::class, 'store']);
+    Route::post('/colors', [ColorController::class, 'create']);
     Route::put('/colors/{id}', [ColorController::class, 'update']);
     Route::delete('/colors/{id}', [ColorController::class, 'delete']);
 
@@ -67,4 +67,5 @@ Route::get('/gearboxes{id}', [GearboxController::class, 'show']);
 
 Route::get('/propulsions', [PropulsionController::class, 'index']);
 Route::get('/propulsions/{id}', [PropulsionController::class, 'show']);
+
 

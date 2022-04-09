@@ -343,4 +343,109 @@ public class API_Model {
         }
         return success;
        }
+       
+       public Boolean tryUpdateRenters(String token,String id){
+            boolean success =false;
+            try{
+                success = UpdateRenters(token,id);
+
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            return success;
+       }
+       private Boolean UpdateRenters(String token, String id) throws Exception{
+           URL url = new URL("http://localhost:8000/api/renters/" + id);
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        
+        http.setRequestProperty("Authorization", "Bearer " +token);
+        http.setRequestMethod("PUT");
+        http.setDoOutput(true);
+
+        http.connect();
+        
+        boolean success = false;
+        String text = "";
+        int responseCode = http.getResponseCode();
+        
+        if(responseCode == 200) {
+            success = true;
+            text = new String(
+                http.getInputStream().readAllBytes(), 
+                StandardCharsets.UTF_8);
+        }else {
+            throw new RuntimeException("Http válasz: " + responseCode);
+        }
+        
+        return success;
+       }
+       
+        public Boolean tryUpdateCars(String token,String id){
+            boolean success =false;
+            try{
+                success = UpdateCars(token,id);
+
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            return success;
+       }
+       private Boolean UpdateCars(String token, String id) throws Exception{
+           URL url = new URL("http://localhost:8000/api/cars/" + id);
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        
+        http.setRequestProperty("Authorization", "Bearer " +token);
+        http.setRequestMethod("PUT");
+        http.setDoOutput(true);
+
+        http.connect();
+        
+        boolean success = false;
+        String text = "";
+        int responseCode = http.getResponseCode();
+        
+        if(responseCode == 200) {
+            success = true;
+            text = new String(
+                http.getInputStream().readAllBytes(), 
+                StandardCharsets.UTF_8);
+        }else {
+            throw new RuntimeException("Http válasz: " + responseCode);
+        }
+        return success;
+       }
+       public Boolean tryUpdateRents(String token,String id){
+            boolean success =false;
+            try{
+                success = UpdateRents(token,id);
+
+            }catch(Exception ex){
+                ex.printStackTrace();
+            }
+            return success;
+       }
+       private Boolean UpdateRents(String token, String id) throws Exception{
+           URL url = new URL("http://localhost:8000/api/rents/" + id);
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        
+        http.setRequestProperty("Authorization", "Bearer " +token);
+        http.setRequestMethod("PUT");
+        http.setDoOutput(true);
+
+        http.connect();
+        
+        boolean success = false;
+        String text = "";
+        int responseCode = http.getResponseCode();
+        
+        if(responseCode == 200) {
+            success = true;
+            text = new String(
+                http.getInputStream().readAllBytes(), 
+                StandardCharsets.UTF_8);
+        }else {
+            throw new RuntimeException("Http válasz: " + responseCode);
+        }
+        return success;
+       }
 }

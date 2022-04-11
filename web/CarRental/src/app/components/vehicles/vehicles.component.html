@@ -1,41 +1,71 @@
-<form [formGroup]="vehicleForm" (ngSubmit)="newCar()">
-    <div class="mb-3">
-      <label for="plate" class="form-label">Rendszám</label>
-      <input type="text" class="form-control" id="plate" formControlName="plate"placeholder="AAA-000">
-      <small *ngIf="vehicleForm.controls['plate'].invalid && vehicleForm.controls['plate'].touched">Rendszám kötelező</small>
-    </div>
-    <div class="mb-3">
-        <label for="brand" class="form-label">Márka</label>
-        <input type="text" class="form-control" id="brand" formControlName="brand" placeholder="márka">
-        <small *ngIf="vehicleForm.controls['brand'].invalid && vehicleForm.controls['brand'].touched">Márka kötelező</small>
-   
-    </div>
-    <div class="mb-3">
-        <label for="price" class="form-label">Ár</label>
-        <input type="text" class="form-control" id="price"formControlName="price" placeholder="Ár">
-        <small *ngIf="vehicleForm.controls['price'].invalid && vehicleForm.controls['price'].touched">Ár kötelező</small>
-   
-    </div>
-    <div class="mb-3">
-        <label for="year" class="form-label">Évjárat</label>
-        <input type="text" class="form-control" id="year" formControlName="year" placeholder="Évjárat">
-        <small *ngIf="vehicleForm.controls['year'].invalid && vehicleForm.controls['year'].touched">Évjárat kötelező</small>
-   
-    </div>
-    <button type="submit" class="btn btn-primary">Új autó hozzáadása</button>
+<div class="container  p-4 border bg-secondary">
+    <form [formGroup]="vehicleForm" (ngSubmit)="newCar()">
+        <div class="mb-3">
+          <label for="plate" class="form-label">Rendszám</label>
+          <input type="text" class="form-control" id="plate" formControlName="plate"placeholder="AAA-000">
+          <small *ngIf="vehicleForm.controls['plate'].invalid && vehicleForm.controls['plate'].touched">Rendszám kötelező</small>
+        </div>
+        <div class="mb-3">
+            <label for="brand" class="form-label">Márka</label>
+            <input type="text" class="form-control" id="brand" formControlName="brand" placeholder="márka">
+            <small *ngIf="vehicleForm.controls['brand'].invalid && vehicleForm.controls['brand'].touched">Márka kötelező</small>
+    
+        </div>
+        <div class="mb-3">
+            <label for="doornumber" class="form-label">ajtókszáma</label>
+            <input type="text" class="form-control" id="doornumber"formControlName="doornumber" placeholder="ajtók száma">
+            <small *ngIf="vehicleForm.controls['doornumber'].invalid && vehicleForm.controls['doornumber'].touched">ajtók száma</small>
+    
+        </div>
+        <div class="mb-3">
+            <label for="year" class="form-label">Évjárat</label>
+            <input type="text" class="form-control" id="year" formControlName="year" placeholder="Évjárat">
+            <small *ngIf="vehicleForm.controls['year'].invalid && vehicleForm.controls['year'].touched">Évjárat kötelező</small>
+    
+        </div>
+    
+        <div class="mb-3">
+            <label for="propulsion" class="form-label">meghajtás</label>
+            <input type="text" class="form-control" id="propulsion" formControlName="propulsion" placeholder="meghajtás">
+            <small *ngIf="vehicleForm.controls['propulsion'].invalid && vehicleForm.controls['propulsion'].touched">meghajtás kötelező</small>
+    
+        </div>
+    
+        <div class="mb-3">
+            <label for="gearbox" class="form-label">sebességváltó</label>
+            <input type="text" class="form-control" id="gearbox" formControlName="gearbox" placeholder="sebességváltó">
+            <small *ngIf="vehicleForm.controls['gearbox'].invalid && vehicleForm.controls['gearbox'].touched">sebességváltó kötelező</small>
+    
+        </div>
+    
+        <div class="mb-3">
+            <label for="color" class="form-label">szín</label>
+            <input type="text" class="form-control" id="color" formControlName="color" placeholder="szín">
+            <small *ngIf="vehicleForm.controls['color'].invalid && vehicleForm.controls['color'].touched">szín kötelező</small>
+    
+        </div>
+        <button type="submit" class="btn btn-primary">Új autó hozzáadása</button>
+
   </form>
+</div>
 <table  class="table">
     <tr>
         <th>Rendszám</th>
         <th>Márka</th>
-        <th>Ár</th>
-        <th>Év</th>
+        <th>ajtókszáma</th>
+        <th>Évjárat</th>
+        <th>meghajtás</th>
+        <th>sebességváltó</th>
+        <th>szín</th>
 
     </tr>
     <tr *ngFor="let vehicle of vehicleList">
         <td>{{vehicle.plate}}</td>
         <td>{{vehicle.brand}}</td>
-        <td>{{vehicle.price}}</td>
-        <td>{{vehicle.year}}</td>
+        <td>{{vehicle.doornumber}}</td>
+        <td>{{vehicle.year}</td>
+        <td>{{vehicle.propulsion}}</td>
+        <td>{{vehicle.gearbox}}</td>
+        <td>{{vehicle.color}}</td>
     </tr>
 </table>

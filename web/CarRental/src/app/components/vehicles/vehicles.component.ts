@@ -24,24 +24,30 @@ export class VehiclesComponent implements OnInit {
     this.vehicleForm = new FormGroup({
       plate: new FormControl('',Validators.required),
       brand: new FormControl('',Validators.required),
+      doornumber: new FormControl('',Validators.required),
       year: new FormControl('',Validators.required),
-      price: new FormControl('',Validators.required),
+      propulsion: new FormControl('',Validators.required),
+      gearbox: new FormControl('',Validators.required),
+      color: new FormControl('',Validators.required),
     });
   }
   fetchData(){
-    let url = "http://localhost:8000/api/"
+    let url = "http://localhost:8000/api/cars"
     this.http.get<any>(url).subscribe(
       res => {
         this.vehicleList = res;
       });
   }
   newCar(){
-    let url = "http://localhost:8000/api/";
+    let url = "http://localhost:8000/api/cars";
     let carData = {
       plate: this.vehicleForm.value.plate,
       brand: this.vehicleForm.value.brand,
+      doornumber: this.vehicleForm.value.doornumber,
       year: this.vehicleForm.value.year,
-      price: this.vehicleForm.value.price,
+      propulsion: this.vehicleForm.value.propulsion,
+      gearbox: this.vehicleForm.value.gearbox,
+      color: this.vehicleForm.value.color,
     }
     console.log(
       carData.brand+

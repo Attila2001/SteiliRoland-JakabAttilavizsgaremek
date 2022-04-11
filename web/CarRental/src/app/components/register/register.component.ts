@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { Register } from 'src/app/models/register.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +15,9 @@ export class RegisterComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private Toastr: ToastrService
+
     ) { }
 
   ngOnInit(): void {
@@ -27,6 +31,7 @@ this.registerForm = new FormGroup({
   register(){
     let user = this.registerForm.value.user;
     let email = this.registerForm.value.email;
+    // let phone = this.registerForm.value.phone;
     let pass = this.registerForm.value.pass;
     let pass2 = this.registerForm.value.pass2;
     this.auth.register(user,email,pass,pass2)

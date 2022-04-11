@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  host = 'http://localhost:8000/api/'
+  api:string = 'http://localhost:8000/api/'
   constructor(private http: HttpClient,private router: Router) {}
   login(user:string,pass:string){
     let endpoint = 'login';
-    let url = this.host + endpoint;
+    let url = this.api + endpoint;
     let authData = {
       name: user,
       password: pass
@@ -25,7 +26,7 @@ export class AuthService {
   }
   register(user:string,email:string,pass:string,pass2:string){
     let endpoint = 'register';
-    let url = this.host + endpoint;
+    let url = this.api + endpoint;
     let authData = {
 
       name: user,
@@ -69,7 +70,7 @@ export class AuthService {
       headers: headerObj
     };
     let endpoint = 'logout';
-    let url = this.host + endpoint;
+    let url = this.api + endpoint;
 
     return this.http.post<any>(url, '', httpOption)
     .subscribe(res => {

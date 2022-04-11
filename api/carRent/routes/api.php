@@ -45,7 +45,7 @@ Route::group(["middleware" => ["auth:sanctum"]], function () {
     Route::delete('/renters/{id}', [RenterController::class, 'delete']);
 });
 Route::post('/login', [AuthController::class, "login"]);
-Route::post('/register', [AuthController::class, "register"]);
+Route::get('/register', [AuthController::class, "register"]);
 
 Route::get('/cars', [CarController::class, 'index']);
 Route::get('/cars/{id}', [CarController::class, 'show']);

@@ -1,6 +1,10 @@
 export interface Vehicle {
     plate: string,
     brand: string,
+    doornumber:string;
     year: string,
-    price: number,
+    propulsion:string;
+    gearbox:string;
+    color:string;
+    
 }

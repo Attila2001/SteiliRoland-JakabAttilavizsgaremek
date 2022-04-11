@@ -1,5 +1,5 @@
 <div class="background">
-  <div class="container">
+  <div class="container p-4 border bg-secondary">
       <h1>Regisztráció</h1>
   <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="mb-3">
@@ -11,8 +11,14 @@
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email" placeholder="valami@valami.hu/com">
         <small *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">email kötelező</small>
-  
       </div>
+
+      <!-- <div class="mb-3">
+        <label for="phone" class="form-label">telefonszám</label>
+        <input type="phone" class="form-control" id="phone" formControlName="phone" placeholder="telefonszám">
+        <small *ngIf="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched">telefonszám kötelező</small>
+  
+      </div> -->
       <div class="mb-3">
         <label for="password" class="form-label">Jelszó</label>
         <input type="password" class="form-control" id="password" formControlName="pass" placeholder="jelszó">
@@ -21,7 +27,7 @@
       </div>
       <div class="mb-3">
         <label for="password2" class="form-label">Jelszó megint</label>
-        <input type="password2" class="form-control" id="password2" formControlName="pass2" placeholder="jelszó megint">
+        <input type="password" class="form-control" id="password2" formControlName="pass2" placeholder="jelszó megint">
         <small *ngIf="registerForm.controls['pass2'].invalid && registerForm.controls['pass2'].touched">jelszó kötelező</small>
   
       </div>

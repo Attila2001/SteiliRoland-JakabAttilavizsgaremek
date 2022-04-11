@@ -5,3 +5,7 @@ input.ng-invalid {
     border-left: 4px solid rgb(5, 230, 5);
   }
   
+  .container{
+    width: 20%;
+    margin:auto;
+  }

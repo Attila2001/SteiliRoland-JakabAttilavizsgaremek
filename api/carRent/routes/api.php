@@ -24,6 +24,7 @@ use App\Http\Controllers\PropulsionController;
 Route::group(["middleware" => ["auth:sanctum"]], function () {
     Route::post('/logout', [AuthController::class, "logout"]);
 
+    
     Route::post('/brands', [BrandController::class, 'create']);
     Route::put('/brands/{id}', [BrandController::class, 'update']);
     Route::delete('/brands/{id}', [BrandController::class, 'delete']);
@@ -40,12 +41,14 @@ Route::group(["middleware" => ["auth:sanctum"]], function () {
     Route::put('/rents/{id}', [RentController::class, 'update']);
     Route::delete('/rents/{id}', [RentController::class, 'delete']);
 
+    
     Route::post('/renters', [RenterController::class, 'create']);
     Route::put('/renters/{id}', [RenterController::class, 'update']);
     Route::delete('/renters/{id}', [RenterController::class, 'delete']);
+    
 });
 Route::post('/login', [AuthController::class, "login"]);
-Route::get('/register', [AuthController::class, "register"]);
+Route::post('/register', [AuthController::class, "register"]);
 
 Route::get('/cars', [CarController::class, 'index']);
 Route::get('/cars/{id}', [CarController::class, 'show']);
@@ -63,7 +66,7 @@ Route::get('/colors', [ColorController::class, 'index']);
 Route::get('/colors/{id}', [ColorController::class, 'show']);
 
 Route::get('/gearboxes', [GearboxController::class, 'index']);
-Route::get('/gearboxes{id}', [GearboxController::class, 'show']);
+Route::get('/gearboxes/{id}', [GearboxController::class, 'show']);
 
 Route::get('/propulsions', [PropulsionController::class, 'index']);
 Route::get('/propulsions/{id}', [PropulsionController::class, 'show']);

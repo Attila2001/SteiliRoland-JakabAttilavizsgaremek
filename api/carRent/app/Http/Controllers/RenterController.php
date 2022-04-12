@@ -48,7 +48,7 @@ class RenterController extends BaseController
     public function update(Request $request,$id){
         try {
             $renters=Renter::find($id);
-            $renters->update( $request->all() );
+            $renters->update($request->all());
             return $this->sendResponse($renters, "Bérlő módosítása sikeres.");
         } catch (\Throwable $th) {
             return $this->sendError("Bérlő módosítása sikertelen", $th);

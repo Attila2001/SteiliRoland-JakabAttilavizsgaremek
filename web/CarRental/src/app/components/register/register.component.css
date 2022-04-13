@@ -9,7 +9,6 @@ input.ng-invalid {
   width: 20%;
   margin:auto;
 }
-
-.h1{
-
+.background{
+  background-color: rgb(186, 199, 210);
 }

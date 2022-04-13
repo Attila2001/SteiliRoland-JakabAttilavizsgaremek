@@ -1,52 +1,56 @@
-<div class="container  p-4 border bg-secondary">
-    <form [formGroup]="vehicleForm" (ngSubmit)="newCar()">
-        <div class="mb-3">
-          <label for="plate" class="form-label">Rendszám</label>
-          <input type="text" class="form-control" id="plate" formControlName="plate"placeholder="AAA-000">
-          <small *ngIf="vehicleForm.controls['plate'].invalid && vehicleForm.controls['plate'].touched">Rendszám kötelező</small>
-        </div>
-        <div class="mb-3">
-            <label for="brand" class="form-label">Márka</label>
-            <input type="text" class="form-control" id="brand" formControlName="brand" placeholder="márka">
-            <small *ngIf="vehicleForm.controls['brand'].invalid && vehicleForm.controls['brand'].touched">Márka kötelező</small>
+<div class="background">
+    <div class="container  p-4 border bg-secondary">
+        <form [formGroup]="vehicleForm" (ngSubmit)="newCar()">
+            <div class="mb-3">
+              <label for="plate" class="form-label">Rendszám</label>
+              <input type="text" class="form-control" id="plate" formControlName="plate"placeholder="AAA-000">
+              <small *ngIf="vehicleForm.controls['plate'].invalid && vehicleForm.controls['plate'].touched">Rendszám kötelező</small>
+            </div>
     
-        </div>
-        <div class="mb-3">
-            <label for="doornumber" class="form-label">ajtókszáma</label>
-            <input type="text" class="form-control" id="doornumber"formControlName="doornumber" placeholder="ajtók száma">
-            <small *ngIf="vehicleForm.controls['doornumber'].invalid && vehicleForm.controls['doornumber'].touched">ajtók száma</small>
+            <div class="mb-3">
+                <label for="doornumber" class="form-label">ajtókszáma</label>
+                <input type="text" class="form-control" id="doornumber"formControlName="doornumber" placeholder="ajtók száma">
+                <small *ngIf="vehicleForm.controls['doornumber'].invalid && vehicleForm.controls['doornumber'].touched">ajtók száma</small>
     
-        </div>
-        <div class="mb-3">
-            <label for="year" class="form-label">Évjárat</label>
-            <input type="text" class="form-control" id="year" formControlName="year" placeholder="Évjárat">
-            <small *ngIf="vehicleForm.controls['year'].invalid && vehicleForm.controls['year'].touched">Évjárat kötelező</small>
+            </div>
+            <div class="mb-3">
+                <label for="year" class="form-label">Évjárat</label>
+                <input type="text" class="form-control" id="year" formControlName="year" placeholder="Évjárat">
+                <small *ngIf="vehicleForm.controls['year'].invalid && vehicleForm.controls['year'].touched">Évjárat kötelező</small>
     
-        </div>
+            </div>
     
-        <div class="mb-3">
-            <label for="propulsion" class="form-label">meghajtás</label>
-            <input type="text" class="form-control" id="propulsion" formControlName="propulsion" placeholder="meghajtás">
-            <small *ngIf="vehicleForm.controls['propulsion'].invalid && vehicleForm.controls['propulsion'].touched">meghajtás kötelező</small>
+            <div class="mb-3">
+                <label for="propulsion" class="form-label">meghajtás</label>
+                <input type="text" class="form-control" id="propulsion" formControlName="propulsion" placeholder="meghajtás">
+                <small *ngIf="vehicleForm.controls['propulsion'].invalid && vehicleForm.controls['propulsion'].touched">meghajtás kötelező</small>
     
-        </div>
+            </div>
     
-        <div class="mb-3">
-            <label for="gearbox" class="form-label">sebességváltó</label>
-            <input type="text" class="form-control" id="gearbox" formControlName="gearbox" placeholder="sebességváltó">
-            <small *ngIf="vehicleForm.controls['gearbox'].invalid && vehicleForm.controls['gearbox'].touched">sebességváltó kötelező</small>
+            <div class="mb-3">
+                <label for="gearbox" class="form-label">sebességváltó</label>
+                <input type="text" class="form-control" id="gearbox" formControlName="gearbox" placeholder="sebességváltó">
+                <small *ngIf="vehicleForm.controls['gearbox'].invalid && vehicleForm.controls['gearbox'].touched">sebességváltó kötelező</small>
     
-        </div>
+            </div>
     
-        <div class="mb-3">
-            <label for="color" class="form-label">szín</label>
-            <input type="text" class="form-control" id="color" formControlName="color" placeholder="szín">
-            <small *ngIf="vehicleForm.controls['color'].invalid && vehicleForm.controls['color'].touched">szín kötelező</small>
+            <div class="mb-3">
+                <label for="brand" class="form-label">Márka</label>
+                <input type="text" class="form-control" id="brand" formControlName="brand" placeholder="márka">
+                <small *ngIf="vehicleForm.controls['brand'].invalid && vehicleForm.controls['brand'].touched">Márka kötelező</small>
     
-        </div>
-        <button type="submit" class="btn btn-primary">Új autó hozzáadása</button>
-
-  </form>
+            </div>
+    
+            <div class="mb-3">
+                <label for="color" class="form-label">szín</label>
+                <input type="text" class="form-control" id="color" formControlName="color" placeholder="szín">
+                <small *ngIf="vehicleForm.controls['color'].invalid && vehicleForm.controls['color'].touched">szín kötelező</small>
+    
+            </div>
+            <button type="submit" class="btn btn-primary">Új autó hozzáadása</button>
+    
+      </form>
+    </div>
 </div>
 <table  class="table">
     <tr>

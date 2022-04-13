@@ -9,3 +9,7 @@ input.ng-invalid {
     width: 30%;
     margin:auto;
   }
+
+  .background{
+    background-color: rgb(186, 199, 210);
+  }

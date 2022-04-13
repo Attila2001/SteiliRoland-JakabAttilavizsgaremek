@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Vehicle } from '../../services/interfaces/vehicle';
-import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { AuthGuard } from '../../services/auth.guard';
-import { AuthService } from '../../services/auth.service';
+import { Vehicle } from '../../shared/interfaces/vehicle';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthGuard } from '../../shared/auth.guard';
+import { AuthService } from '../../shared/auth.service';
+import { carModel } from './car.model';
 @Component({
   selector: 'app-vehicles',
   templateUrl: './vehicles.component.html',
@@ -13,6 +14,11 @@ export class VehiclesComponent implements OnInit {
   vehicleForm !: FormGroup;
   vehicleList:Vehicle[] = [];
   token !: string|null;
+  carsModelObj: carModel = new carModel();
+  cargroups !: any;
+  selectedcargroup = new FormControl('');
+
+
   constructor(
     private http: HttpClient,
     private formBuilder: FormBuilder,
@@ -23,30 +29,30 @@ export class VehiclesComponent implements OnInit {
     this.fetchData();
     this.vehicleForm = new FormGroup({
       plate: new FormControl('',Validators.required),
-      brand: new FormControl('',Validators.required),
       doornumber: new FormControl('',Validators.required),
       year: new FormControl('',Validators.required),
       propulsion: new FormControl('',Validators.required),
       gearbox: new FormControl('',Validators.required),
+      brand: new FormControl('',Validators.required),
       color: new FormControl('',Validators.required),
     });
   }
   fetchData(){
-    let url = "http://localhost:8000/api/cars"
+    let url = "http://localhost:8000/api/"
     this.http.get<any>(url).subscribe(
       res => {
         this.vehicleList = res;
       });
   }
   newCar(){
-    let url = "http://localhost:8000/api/cars";
+    let url = "http://localhost:8000/api/";
     let carData = {
       plate: this.vehicleForm.value.plate,
-      brand: this.vehicleForm.value.brand,
       doornumber: this.vehicleForm.value.doornumber,
       year: this.vehicleForm.value.year,
       propulsion: this.vehicleForm.value.propulsion,
       gearbox: this.vehicleForm.value.gearbox,
+      brand: this.vehicleForm.value.brand,
       color: this.vehicleForm.value.color,
     }
     console.log(
@@ -69,4 +75,5 @@ export class VehiclesComponent implements OnInit {
       console.log(res);
     });
   }
+
 }

@@ -43,7 +43,7 @@ this.registerForm = new FormGroup({
       .subscribe(
         (res) => {
           alert("Sikeres regisztráció!");
-          this.router.navigate(['']);
+          this.router.navigate(['main']);
         }, (error) => {
           console.error(error);
           alert("A regisztráció sikertelen!");

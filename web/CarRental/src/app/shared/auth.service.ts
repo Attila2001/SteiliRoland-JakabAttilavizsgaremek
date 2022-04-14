@@ -71,7 +71,7 @@ export class AuthService {
   register(user:string,email:string,pass:string,pass2:string){
     // let endpoint = 'register';
     // let url = this.api + endpoint;
-    let url = 'http://localhost:8000/api/register';
+    let url = 'http://localhost:8000/api/';
     let authData = {
 
       name: user,

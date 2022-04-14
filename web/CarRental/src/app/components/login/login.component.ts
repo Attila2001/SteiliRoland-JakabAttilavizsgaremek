@@ -30,10 +30,10 @@ this.loginForm = new FormGroup({
     .subscribe(res =>{
       console.log(res.token);
       
-        localStorage.setItem('currentUser', 
+        localStorage.setItem('currentuser', 
         JSON.stringify({token: res.token, name: res.name})
         );
-        this.router.navigate(['vehicles']);
+        this.router.navigate(['main']);
       }
     );
   }

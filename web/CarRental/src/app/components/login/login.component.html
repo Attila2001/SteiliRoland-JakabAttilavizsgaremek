@@ -1,21 +1,34 @@
-<div class="background " >
+
+<body class="text-center">
+<main class="form-signin">
+<div>
   
   <div class="container position-relative  p-4 border bg-secondary">
-      <h1>Belépés</h1>
+      <h1 class="h3 mb-3 fw-normal">Bejelentkezés</h1>
         <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <div class="mb-3">
-        <label for="user" class="form-label">Név</label>
-        <input type="text" class="form-control" id="user" aria-describedby="userHelp" formControlName="user" placeholder="név">
+
+      <div class="form-floating">
+        <label for="floatingInput" >név</label>
+        <input type="user" class="form-control" id="floatingInput" aria-describedby="userHelp" formControlName="user">
         <small *ngIf="loginForm.controls['user'].invalid && loginForm.controls['user'].touched">név kötelező</small>
   
       </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Jelszó</label>
-        <input type="password" class="form-control" id="password" formControlName="pass"placeholder="jelszó">
+      <div class="form-floating">
+        <label for="floatingPassword" >Jelszó</label>
+        <input type="password" class="form-control" id="floatingPassword" formControlName="pass">
         <small *ngIf="loginForm.controls['pass'].invalid && loginForm.controls['pass'].touched">jelszó kötelező</small>
   
       </div>
-      <button type="submit" class="btn btn-primary">Bejelentkezés</button>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> emlékezz rám
+        </label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Bejelentkezés</button>
     </form>
   </div>
 </div>
+</main>
+</body>

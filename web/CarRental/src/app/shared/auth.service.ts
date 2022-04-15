@@ -69,15 +69,12 @@ export class AuthService {
     return token;
   }
   register(user:string,email:string,pass:string,pass2:string){
-    // let endpoint = 'register';
-    // let url = this.api + endpoint;
-    let url = 'http://localhost:8000/api/';
     let authData = {
 
       name: user,
       email: email,
       password: pass,
-      password_confirmation: pass2
+      confirmed_password: pass2
     }
     let data = JSON.stringify(authData);
     let headerObj = new HttpHeaders({
@@ -86,6 +83,8 @@ export class AuthService {
     let header = {
       headers: headerObj
     }
+    let endpoint = 'register';
+    let url = this.host + endpoint;
       return this.http.post<any>(url,data,header);
   }
 }

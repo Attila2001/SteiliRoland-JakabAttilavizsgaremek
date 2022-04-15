@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 this.registerForm = new FormGroup({
   user: new FormControl('',Validators.required),
-  email: new FormControl('',Validators.required),
+  email: new FormControl('',[Validators.required, Validators.email]),
   pass: new FormControl('',Validators.required),
   pass2: new FormControl('',Validators.required),
 });
@@ -39,7 +39,7 @@ this.registerForm = new FormGroup({
       alert("A jelszavak nem egyeznek!")
       this.registerForm.reset();
     }else{
-      this.auth.register(user,email, pass, pass2,)
+      this.auth.register(user,email, pass, pass2)
       .subscribe(
         (res) => {
           alert("Sikeres regisztráció!");

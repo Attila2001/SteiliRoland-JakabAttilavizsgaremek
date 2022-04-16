@@ -4,6 +4,7 @@ import { Vehicle } from '../../shared/interfaces/vehicle';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthGuard } from '../../shared/auth.guard';
 import { AuthService } from '../../shared/auth.service';
+import { ApiService } from '../../shared/api.service';
 import { carModel } from './car.model';
 @Component({
   selector: 'app-vehicles',
@@ -11,6 +12,7 @@ import { carModel } from './car.model';
   styleUrls: ['./vehicles.component.css']
 })
 export class VehiclesComponent implements OnInit {
+  host = 'http://localhost:8000/api/';
   vehicleForm !: FormGroup;
   vehicleList:Vehicle[] = [];
   token !: string|null;
@@ -22,7 +24,9 @@ export class VehiclesComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private formBuilder: FormBuilder,
-    private auth: AuthService) 
+    private authGuard: AuthGuard,
+    private auth: AuthService,
+    private api: ApiService) 
     { }
 
   ngOnInit(): void {
@@ -38,18 +42,18 @@ export class VehiclesComponent implements OnInit {
     });
   }
   fetchData(){
-    let url = "http://localhost:8000/api/"
+    let url = "http://localhost:8000/api/cars"
     this.http.get<any>(url).subscribe(
       res => {
         this.vehicleList = res;
       });
   }
   newCar(){
-    let url = "http://localhost:8000/api/";
+    let url = "http://localhost:8000/api/cars";
     let carData = {
       plate: this.vehicleForm.value.plate,
       doornumber: this.vehicleForm.value.doornumber,
-      year: this.vehicleForm.value.year,
+      modelyear: this.vehicleForm.value.year,
       propulsion: this.vehicleForm.value.propulsion,
       gearbox: this.vehicleForm.value.gearbox,
       brand: this.vehicleForm.value.brand,
@@ -71,7 +75,8 @@ export class VehiclesComponent implements OnInit {
     let header = {
       headers: headerObj
     }
-    this.http.post<any>(url,data,header).subscribe(res=>{
+    let endpoint = 'cars';
+    return this.http.post<any>(url,data,header).subscribe(res=>{
       console.log(res);
     });
   }

@@ -45,7 +45,7 @@ export class ApiService {
   }
 
   getGroupcars(id: number) {
-    let endpoint = 'cars/groups/';
+    let endpoint = 'cars/';
     return this.http.get<any>(this.host + endpoint + id);
   }
 

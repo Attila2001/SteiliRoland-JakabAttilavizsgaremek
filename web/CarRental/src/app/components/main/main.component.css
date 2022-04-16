@@ -77,3 +77,22 @@ body {
     }
   }
   
+
+  .item img {
+    position:absolute;
+    object-fit:cover;
+    width: 100%;
+    top: 0;
+    left: 0;
+} 
+
+.item{
+
+  margin-bottom: 235px;
+}
+
+
+/* .img{
+  height: 300px;
+  width:;
+} */

@@ -1,34 +1,35 @@
 
 <body class="text-center">
 <main class="form-signin">
-<div>
-  
-  <div class="container position-relative  p-4 border bg-secondary">
-      <h1 class="h3 mb-3 fw-normal">Bejelentkezés</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <form>
+    <div>
+      <div class="container position-relative  p-4 border bg-secondary">
+          <h1 class="h3 mb-3 fw-normal">Bejelentkezés</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-      <div class="form-floating">
-        <label for="floatingInput" >név</label>
-        <input type="user" class="form-control" id="floatingInput" aria-describedby="userHelp" formControlName="user">
-        <small *ngIf="loginForm.controls['user'].invalid && loginForm.controls['user'].touched">név kötelező</small>
-  
-      </div>
-      <div class="form-floating">
-        <label for="floatingPassword" >Jelszó</label>
-        <input type="password" class="form-control" id="floatingPassword" formControlName="pass">
-        <small *ngIf="loginForm.controls['pass'].invalid && loginForm.controls['pass'].touched">jelszó kötelező</small>
-  
-      </div>
+          <div class="form-floating">
+            <input type="user" class="form-control me-2" id="floatingInput" placeholder="név" formControlName="user" >
+            <label for="floatingInput" >név</label>
+            <small *ngIf="loginForm.controls['user'].invalid && loginForm.controls['user'].touched">név kötelező</small>
+      
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="jelszó" formControlName="pass">
+            <label for="floatingPassword" >Jelszó</label>
+            <small *ngIf="loginForm.controls['pass'].invalid && loginForm.controls['pass'].touched">jelszó kötelező</small>
+      
+          </div>
 
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> emlékezz rám
-        </label>
-      </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"> emlékezz rám
+            </label>
+          </div>
 
-      <button class="w-100 btn btn-lg btn-primary" type="submit">Bejelentkezés</button>
-    </form>
-  </div>
-</div>
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Bejelentkezés</button>
+        </form>
+      </div>
+    </div>
+  </form>
 </main>
 </body>

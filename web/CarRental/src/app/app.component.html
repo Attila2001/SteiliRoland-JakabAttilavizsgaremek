@@ -1,50 +1,42 @@
 
 
-<div class="background">
-
-    <div class="navbar">
-      <div class="navbar">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li>
-                    <a class="nav-link btn" routerLink="/main">Főoladal</a>
-                  </li>
-                  <li *ngIf="!isLoggedIn()" class="nav-item">
-                    <a class="nav-link btn" routerLink="/login" routerLinkActive="active">Belépés</a>
-                  </li>
-
-                  <li *ngIf="!isLoggedIn()" class="nav-item">
-                    <a class="nav-link btn" routerLink="/register" routerLinkActive="active">Regisztráció</a>
-                  </li>
-                   
-                  <li *ngIf="!isLoggedIn()" class="nav-item  ">
-                    <a class="nav-link btn" (click)="logout()" routerLink="/main" >kijelentkezés</a>
-                  </li> 
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">CarRental</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link btn" routerLink="/vehicles">Új autó felvétele</a>
+                      <a class="nav-link btn" routerLink="/main">Főoladal</a>
                   </li>
+                  <li *ngIf="!isLoggedIn()" class="nav-item">
+                      <a class="nav-link btn" routerLink="/login" routerLinkActive="active">Belépés</a>
+                    </li>
+                    <li *ngIf="!isLoggedIn()" class="nav-item">
+                      <a class="nav-link btn" routerLink="/register" routerLinkActive="active">Regisztráció</a>
+                    </li>
                   
-              
-                </ul>
-                
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-          </nav>
-          <!-- <select class="form-select navbar-secondary bg-secondary" aria-label="Default select example">
-            <option selected>nyiss le</option>
-            <option value="1">suzuki</option>
-            <option value="2">wolkswagen</option>
-            <option value="3">bmw</option>
-          </select> -->
+                    <li *ngIf="!isLoggedIn()" class="nav-item  ">
+                      <a class="nav-link btn" (click)="logout()" routerLink="/" >kijelentkezés</a>
+                    </li>
+                    <li *ngIf="!isLoggedIn()" class="nav-item">
+                      <a class="nav-link btn" routerLink="/vehicles">Új autó felvétele</a>
+                    </li>  
+                 
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="keresés" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">keresés</button>
+              </form>
+            </div>
+          </div>
+        </nav>
 
-      </div>
+
   
-    </div>
-  </div>
+
   
 
 <div>

@@ -42,18 +42,18 @@ export class VehiclesComponent implements OnInit {
     });
   }
   fetchData(){
-    let url = "http://localhost:8000/api/cars"
+    let url = "http://localhost:8000/api/"
     this.http.get<any>(url).subscribe(
       res => {
         this.vehicleList = res;
       });
   }
   newCar(){
-    let url = "http://localhost:8000/api/cars";
+    let url = "http://localhost:8000/api/";
     let carData = {
       plate: this.vehicleForm.value.plate,
       doornumber: this.vehicleForm.value.doornumber,
-      modelyear: this.vehicleForm.value.year,
+      modelyear: this.vehicleForm.value.modelyear,
       propulsion: this.vehicleForm.value.propulsion,
       gearbox: this.vehicleForm.value.gearbox,
       brand: this.vehicleForm.value.brand,

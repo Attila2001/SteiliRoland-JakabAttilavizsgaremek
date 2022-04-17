@@ -1,15 +1,16 @@
 input.ng-invalid {
-    border-left: 4px solid red;
-  }
-  input.ng-valid {
-    border-left: 4px solid rgb(5, 230, 5);
-  }
+  border-left: 3px solid red;
+}
+input.ng-valid {
+  border-left: 3px solid rgb(5, 230, 5);
+}
+
   
   .container{
-    width: 30%;
+    width: auto;
     margin:auto;
   }
 
   .background{
-    background-color: rgb(186, 199, 210);
+    background-color: rgb(19, 19, 19);
   }

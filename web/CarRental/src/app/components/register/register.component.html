@@ -5,31 +5,25 @@
       <h1>Regisztráció</h1>
   <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="form-floating">
+          <input type="text" class="form-control" id="user" aria-describedby="userHelp" placeholder="név" formControlName="user">
           <label for="user" class="form-label">Név</label>
-          <input type="text" class="form-control" id="user" aria-describedby="userHelp" formControlName="user">
           <small *ngIf="registerForm.controls['user'].invalid && registerForm.controls['user'].touched">név kötelező</small>
         </div>
       <div class="form-floating">
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="email" formControlName="email">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
         <small *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched">email kötelező</small>
       </div>
 
-      <!-- <div class="form-floating">
-        <label for="phone" class="form-label">telefonszám</label>
-        <input type="phone" class="form-control" id="phone" formControlName="phone" placeholder="telefonszám">
-        <small *ngIf="registerForm.controls['phone'].invalid && registerForm.controls['phone'].touched">telefonszám kötelező</small>
-  
-      </div> -->
       <div class="form-floating">
-        <label for="password" class="form-label">Jelszó</label>
         <input type="password" class="form-control" id="password" formControlName="pass" placeholder="jelszó">
+        <label for="password" class="form-label">Jelszó</label>
         <small *ngIf="registerForm.controls['pass'].invalid && registerForm.controls['pass'].touched">jelszó kötelező</small>
   
       </div>
       <div class="form-floating">
-        <label for="password2" class="form-label">Jelszó megint</label>
         <input type="password" class="form-control" id="password2" formControlName="pass2" placeholder="jelszó megint">
+        <label for="password2" class="form-label">Jelszó megint</label>
         <small *ngIf="registerForm.controls['pass2'].invalid && registerForm.controls['pass2'].touched">jelszó kötelező</small>
   
       </div>

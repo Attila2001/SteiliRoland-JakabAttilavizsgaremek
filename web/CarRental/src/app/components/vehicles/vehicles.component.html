@@ -8,7 +8,7 @@
             </div>
     
             <div class="mb-3">
-                <label for="doornumber" class="form-label">ajtókszáma</label>
+                <label for="doornumber" class="form-label">Ajtók száma</label>
                 <input type="text" class="form-control" id="doornumber"formControlName="doornumber" placeholder="ajtók száma">
                 <small *ngIf="vehicleForm.controls['doornumber'].invalid && vehicleForm.controls['doornumber'].touched">ajtók száma</small>
     
@@ -53,16 +53,22 @@
     </div>
 </div>
 <table  class="table">
-    <tr>
-        <th>Rendszám</th>
-        <th>Márka</th>
-        <th>ajtókszáma</th>
-        <th>Évjárat</th>
-        <th>meghajtás</th>
-        <th>sebességváltó</th>
-        <th>szín</th>
+
+    <table class="table">
+  <thead>
+      <tr>
+        <th scope="col">Rendszám</th>
+        <th scope="col">Márka</th>
+        <th scope="col">ajtókszáma</th>
+        <th scope="col">Évjárat</th>
+        <th scope="col">meghajtás</th>
+        <th scope="col">sebességváltó</th>
+        <th scope="col">szín</th>
 
     </tr>
+  </thead>
+
+
     <tr *ngFor="let vehicle of vehicleList">
         <td>{{vehicle.plate}}</td>
         <td>{{vehicle.brand}}</td>

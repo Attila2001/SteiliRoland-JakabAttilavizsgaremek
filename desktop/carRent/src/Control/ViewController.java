@@ -40,15 +40,16 @@ public class ViewController {
         
         Vector<String> columnNames = new Vector<>();
         
-        if( carFrm.getTableTb().getSelectedIndex() == 0 ) {
+        switch (carFrm.getTableTb().getSelectedIndex()){
+        case 0 ->{
             
             columnNames = viewMdl.getRenterColumnNames();
             tableData = APICtr.getRenters();
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getRenterTbl().setModel( tablMdl );
-            
-        }else if( carFrm.getTableTb().getSelectedIndex() == 1 ) {
+        }   
+         case 1 ->{
             
             columnNames = viewMdl.getCarColumnNames();
             tableData = APICtr.getCars();
@@ -56,13 +57,49 @@ public class ViewController {
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getCarTbl().setModel( tablMdl );
             
-        }else {
+        }
+         case 2 ->{
             
             columnNames = viewMdl.getRentColumnNames();
             tableData = APICtr.getRents();
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getRentTbl().setModel( tablMdl );
+        }
+         case 3 ->{
+            columnNames = viewMdl.getBrandColumnNames();
+            tableData = APICtr.getBrands();
+            tableData.add( null );
+            TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
+            carFrm.getBrandTbl().setModel( tablMdl );
+         }
+         case 4 ->{
+            columnNames = viewMdl.getColorColumnNames();
+            tableData = APICtr.getColors();
+            tableData.add( null );
+            TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
+            carFrm.getColorTbl().setModel( tablMdl );
+         }
+         case 5 ->{
+            columnNames = viewMdl.getGearboxColumnNames();
+            tableData = APICtr.getGearboxes();
+            tableData.add( null );
+            TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
+            carFrm.getGearboxTbl().setModel( tablMdl );
+            carFrm.getDeleteBtn().setVisible(false);
+            carFrm.getEditBtn().setVisible(false);
+            carFrm.getSaveBtn().setVisible(false);
+         }
+         case 6 ->{
+            columnNames = viewMdl.getPropulsionColumnNames();
+            tableData = APICtr.getPropulsions();
+            tableData.add( null );
+            TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
+            carFrm.getPropulsionTbl().setModel( tablMdl );
+            carFrm.getDeleteBtn().setVisible(false);
+            carFrm.getEditBtn().setVisible(false);
+            carFrm.getSaveBtn().setVisible(false);
+         }
         }
     }
     
@@ -75,18 +112,7 @@ public class ViewController {
     }
 
     private void edit() {
-        
-        switch (carFrm.getTableTb().getSelectedIndex()) {
-           case 0 ->{
-               updateRenters();
-           }
-           case 1 ->{
-               updateCars();
-           }
-           case 2 ->{
-               updateRents();
-           }
-        }
+
     }
     
     private void delete() {
@@ -102,36 +128,13 @@ public class ViewController {
            case 2 ->{
                deleteRents();
            }
+           case 3 ->{
+               deleteBrands();
+           }
+           case 4 ->{
+               deleteColors();
+           }
        }
-    }
-    private void updateRenters(){
-        int row = carFrm.getRenterTbl().getSelectedRow();
-        String value = carFrm.getRenterTbl().getModel().getValueAt(row, 0).toString();
-        APICtr.setId(value);
-        
-        APICtr.UpdateRenter();
-                
-        initTables();
-    }
-    private void updateCars(){
-        int row = carFrm.getCarTbl().getSelectedRow();
-        String value = carFrm.getCarTbl().getModel().getValueAt(row, 0).toString();
-        APICtr.setId(value);
-        
-        APICtr.UpdateCar();
-                
-        initTables();
-    }
-    private void updateRents(){
-        int row = carFrm.getRentTbl().getSelectedRow();
-        String value = carFrm.getRentTbl().getModel().getValueAt(row, 0).toString();
-        System.out.println(value);
-        APICtr.setId(value);
-        
-        APICtr.UpdateRent();
-                
-        initTables();
-        
     }
     private void deleteRenters(){
         int row = carFrm.getRenterTbl().getSelectedRow();
@@ -158,6 +161,24 @@ public class ViewController {
         APICtr.setId(value);
         
         APICtr.DeleteRent();
+                
+        initTables();
+    }
+    private void deleteBrands(){
+        int row = carFrm.getBrandTbl().getSelectedRow();
+        String value = carFrm.getBrandTbl().getModel().getValueAt(row, 0).toString();
+        APICtr.setId(value);
+        
+        APICtr.DeleteBrand();
+                
+        initTables();
+    }
+    private void deleteColors(){
+        int row = carFrm.getColorTbl().getSelectedRow();
+        String value = carFrm.getColorTbl().getModel().getValueAt(row, 0).toString();
+        APICtr.setId(value);
+        
+        APICtr.DeleteColor();
                 
         initTables();
     }

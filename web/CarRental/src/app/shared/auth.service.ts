@@ -23,7 +23,7 @@ export class AuthService {
     let headerObj = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    const httpOption = {
+    let httpOption = {
       headers: headerObj
     };    
     let endpoint = 'login';
@@ -47,7 +47,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     });
-    const httpOption = {
+    let httpOption = {
       headers: headerObj
     };    
     let endpoint = 'logout';

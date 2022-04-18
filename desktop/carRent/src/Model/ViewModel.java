@@ -42,6 +42,38 @@ public class ViewModel {
         columnNames.add( "Kölcsönzött autó" );
         return columnNames;
     }
+     public Vector<String> getBrandColumnNames(){
+        
+        Vector<String> columnNames = new Vector<>();
+        columnNames.add( "Id" );
+        columnNames.add( "Név" );
+        
+        return columnNames;
+     }
      
+     public Vector<String> getColorColumnNames(){
+        
+        Vector<String> columnNames = new Vector<>();
+        columnNames.add( "Id" );
+        columnNames.add( "Név" );
+        
+        return columnNames;
+     }
+     public Vector<String> getPropulsionColumnNames(){
+        
+        Vector<String> columnNames = new Vector<>();
+        columnNames.add( "Id" );
+        columnNames.add( "Név" );
+        
+        return columnNames;
+     }
+     public Vector<String> getGearboxColumnNames(){
+        
+        Vector<String> columnNames = new Vector<>();
+        columnNames.add( "Id" );
+        columnNames.add( "Név" );
+        
+        return columnNames;
+     }
 }
 

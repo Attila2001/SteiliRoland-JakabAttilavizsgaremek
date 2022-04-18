@@ -1,10 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../../shared/interfaces/vehicle';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthGuard } from '../../shared/auth.guard';
 import { AuthService } from '../../shared/auth.service';
-import { ApiService } from '../../shared/api.service';
 import { carModel } from './car.model';
 @Component({
   selector: 'app-vehicles',
@@ -23,10 +22,8 @@ export class VehiclesComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private formBuilder: FormBuilder,
     private authGuard: AuthGuard,
-    private auth: AuthService,
-    private api: ApiService) 
+    private auth: AuthService,) 
     { }
 
   ngOnInit(): void {
@@ -42,14 +39,14 @@ export class VehiclesComponent implements OnInit {
     });
   }
   fetchData(){
-    let url = "http://localhost:8000/api/"
+    let url = "http://localhost:8000/api/cars"
     this.http.get<any>(url).subscribe(
       res => {
         this.vehicleList = res;
       });
   }
   newCar(){
-    let url = "http://localhost:8000/api/";
+    let url = "http://localhost:8000/api/cars";
     let carData = {
       plate: this.vehicleForm.value.plate,
       doornumber: this.vehicleForm.value.doornumber,

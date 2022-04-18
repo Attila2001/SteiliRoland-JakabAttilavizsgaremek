@@ -29,6 +29,7 @@ import { NewcardComponent } from './components/cards/newcard/newcard.component';
     OldcardComponent,
     NewcardComponent,
 
+
   ],
   imports: [
     BrowserModule,

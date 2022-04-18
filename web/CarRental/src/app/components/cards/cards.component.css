@@ -6,3 +6,8 @@
     margin: 3px;
     margin-top: 5px;
 }
+
+.card-img-top{
+    width: auto;
+    height:250px;
+}

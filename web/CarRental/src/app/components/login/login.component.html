@@ -4,6 +4,7 @@
   <form>
     <div>
       <div class="container position-relative  p-4 border bg-secondary">
+        <button type="button" class="btn-close float-end" routerLink="/" aria-label="Close"></button>
           <h1 class="h3 mb-3 fw-normal">Bejelentkezés</h1>
             <form [formGroup]="loginForm" (ngSubmit)="login()">
 

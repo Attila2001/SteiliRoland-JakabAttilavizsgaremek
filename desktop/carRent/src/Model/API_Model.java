@@ -238,6 +238,197 @@ public class API_Model {
          return rents;
        }
        
+       public Vector<Vector<Object>> tryBrands() {
+        Vector<Vector<Object>> brands = new Vector<>();
+        try {
+            brands = Brands();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return brands;
+        }
+       private Vector<Vector<Object>> Brands() throws Exception {
+        URL url = new URL("http://localhost:8000/api/brands");
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        http.setRequestMethod("GET");
+        http.setDoOutput(true);
+        
+        http.connect();
+ 
+        String text = "";
+        int responseCode = http.getResponseCode();
+        if (responseCode == 200) {
+            text = new String(
+                http.getInputStream().readAllBytes(), 
+                StandardCharsets.UTF_8);
+        }else {
+            throw new RuntimeException("Http válasz: " + responseCode);
+        }
+        JsonObject jsonObject = new JsonParser().parse(text).getAsJsonObject();
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+        JsonArray arr = jsonObject.getAsJsonArray("data");
+        
+         BrandModel[] Array = gson.fromJson(arr, BrandModel[].class);
+        ArrayList<BrandModel> list = new ArrayList<>(Arrays.asList(Array));
+
+        Vector<Vector<Object>> brands = new Vector<>();
+        for(BrandModel brandmodel: list) {
+            
+            Vector<Object> brand = new Vector<>();
+            brand.add(brandmodel.id);
+            brand.add(brandmodel.name);
+            
+            brands.add(brand);
+            
+        }
+         return brands;
+       }
+       
+        public Vector<Vector<Object>> tryColors() {
+        Vector<Vector<Object>> colors = new Vector<>();
+        try {
+            colors = Colors();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return colors;
+        }
+       private Vector<Vector<Object>> Colors() throws Exception {
+        URL url = new URL("http://localhost:8000/api/colors");
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        http.setRequestMethod("GET");
+        http.setDoOutput(true);
+        
+        http.connect();
+ 
+        String text = "";
+        int responseCode = http.getResponseCode();
+        if (responseCode == 200) {
+            text = new String(
+                http.getInputStream().readAllBytes(), 
+                StandardCharsets.UTF_8);
+        }else {
+            throw new RuntimeException("Http válasz: " + responseCode);
+        }
+        JsonObject jsonObject = new JsonParser().parse(text).getAsJsonObject();
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+        JsonArray arr = jsonObject.getAsJsonArray("data");
+        
+         ColorModel[] Array = gson.fromJson(arr, ColorModel[].class);
+        ArrayList<ColorModel> list = new ArrayList<>(Arrays.asList(Array));
+
+        Vector<Vector<Object>> colors = new Vector<>();
+        for(ColorModel colormodel: list) {
+            
+            Vector<Object> color = new Vector<>();
+            color.add(colormodel.id);
+            color.add(colormodel.name);
+            
+            colors.add(color);
+            
+        }
+         return colors;
+       }
+       
+       public Vector<Vector<Object>> tryGearboxes() {
+        Vector<Vector<Object>> gearboxes = new Vector<>();
+        try {
+            gearboxes = Gearboxes();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return gearboxes;
+        }
+       private Vector<Vector<Object>> Gearboxes() throws Exception {
+        URL url = new URL("http://localhost:8000/api/gearboxes");
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        http.setRequestMethod("GET");
+        http.setDoOutput(true);
+        
+        http.connect();
+ 
+        String text = "";
+        int responseCode = http.getResponseCode();
+        if (responseCode == 200) {
+            text = new String(
+                http.getInputStream().readAllBytes(), 
+                StandardCharsets.UTF_8);
+        }else {
+            throw new RuntimeException("Http válasz: " + responseCode);
+        }
+        JsonObject jsonObject = new JsonParser().parse(text).getAsJsonObject();
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+        JsonArray arr = jsonObject.getAsJsonArray("data");
+        
+         BrandModel[] Array = gson.fromJson(arr, BrandModel[].class);
+        ArrayList<BrandModel> list = new ArrayList<>(Arrays.asList(Array));
+
+        Vector<Vector<Object>> gearboxes = new Vector<>();
+        for(BrandModel gearboxmodel: list) {
+            
+            Vector<Object>  gearbox = new Vector<>();
+            gearbox.add(gearboxmodel.id);
+            gearbox.add(gearboxmodel.name);
+            
+            gearboxes.add(gearbox);
+            
+        }
+         return gearboxes;
+       }
+       
+       public Vector<Vector<Object>> tryPropulsions() {
+        Vector<Vector<Object>> propulsions = new Vector<>();
+        try {
+            propulsions = Propulsions();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return propulsions;
+        }
+       private Vector<Vector<Object>> Propulsions() throws Exception {
+        URL url = new URL("http://localhost:8000/api/propulsions");
+        HttpURLConnection http = (HttpURLConnection) url.openConnection();
+        http.setRequestMethod("GET");
+        http.setDoOutput(true);
+        
+        http.connect();
+ 
+        String text = "";
+        int responseCode = http.getResponseCode();
+        if (responseCode == 200) {
+            text = new String(
+                http.getInputStream().readAllBytes(), 
+                StandardCharsets.UTF_8);
+        }else {
+            throw new RuntimeException("Http válasz: " + responseCode);
+        }
+        JsonObject jsonObject = new JsonParser().parse(text).getAsJsonObject();
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+        JsonArray arr = jsonObject.getAsJsonArray("data");
+        
+         PropulsionModel[] Array = gson.fromJson(arr, PropulsionModel[].class);
+        ArrayList<PropulsionModel> list = new ArrayList<>(Arrays.asList(Array));
+
+        Vector<Vector<Object>> propulsions = new Vector<>();
+        for(PropulsionModel propulsionmodel: list) {
+            
+            Vector<Object>  propulsion = new Vector<>();
+            propulsion.add(propulsionmodel.id);
+            propulsion.add(propulsionmodel.name);
+            
+            propulsions.add(propulsion);
+            
+        }
+         return propulsions;
+       }
        public Boolean tryDeleteRenters(String token,String id){
             boolean success =false;
             try{
@@ -344,22 +535,22 @@ public class API_Model {
         return success;
        }
        
-       public Boolean tryUpdateRenters(String token,String id){
+       public Boolean tryDeleteBrands(String token,String id){
             boolean success =false;
             try{
-                success = UpdateRenters(token,id);
+                success = DeleteBrands(token,id);
 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
             return success;
        }
-       private Boolean UpdateRenters(String token, String id) throws Exception{
-           URL url = new URL("http://localhost:8000/api/renters/" + id);
+       private Boolean DeleteBrands(String token, String id) throws Exception{
+           URL url = new URL("http://localhost:8000/api/brands/" + id);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         
         http.setRequestProperty("Authorization", "Bearer " +token);
-        http.setRequestMethod("PUT");
+        http.setRequestMethod("DELETE");
         http.setDoOutput(true);
 
         http.connect();
@@ -376,26 +567,25 @@ public class API_Model {
         }else {
             throw new RuntimeException("Http válasz: " + responseCode);
         }
-        
         return success;
        }
        
-        public Boolean tryUpdateCars(String token,String id){
+       public Boolean tryDeleteColors(String token,String id){
             boolean success =false;
             try{
-                success = UpdateCars(token,id);
+                success = DeleteColors(token,id);
 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
             return success;
        }
-       private Boolean UpdateCars(String token, String id) throws Exception{
-           URL url = new URL("http://localhost:8000/api/cars/" + id);
+       private Boolean DeleteColors(String token, String id) throws Exception{
+           URL url = new URL("http://localhost:8000/api/colors/" + id);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         
         http.setRequestProperty("Authorization", "Bearer " +token);
-        http.setRequestMethod("PUT");
+        http.setRequestMethod("DELETE");
         http.setDoOutput(true);
 
         http.connect();
@@ -414,38 +604,5 @@ public class API_Model {
         }
         return success;
        }
-       public Boolean tryUpdateRents(String token,String id){
-            boolean success =false;
-            try{
-                success = UpdateRents(token,id);
-
-            }catch(Exception ex){
-                ex.printStackTrace();
-            }
-            return success;
-       }
-       private Boolean UpdateRents(String token, String id) throws Exception{
-           URL url = new URL("http://localhost:8000/api/rents/" + id);
-        HttpURLConnection http = (HttpURLConnection) url.openConnection();
-        
-        http.setRequestProperty("Authorization", "Bearer " +token);
-        http.setRequestMethod("PUT");
-        http.setDoOutput(true);
-
-        http.connect();
-        
-        boolean success = false;
-        String text = "";
-        int responseCode = http.getResponseCode();
-        
-        if(responseCode == 200) {
-            success = true;
-            text = new String(
-                http.getInputStream().readAllBytes(), 
-                StandardCharsets.UTF_8);
-        }else {
-            throw new RuntimeException("Http válasz: " + responseCode);
-        }
-        return success;
-       }
+      
 }

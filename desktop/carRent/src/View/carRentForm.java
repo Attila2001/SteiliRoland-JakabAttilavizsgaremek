@@ -71,6 +71,18 @@ public class carRentForm extends javax.swing.JFrame {
         rentTb = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         rentTbl = new javax.swing.JTable();
+        brandTb = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        brandTbl = new javax.swing.JTable();
+        colorTb = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        colorTbl = new javax.swing.JTable();
+        propulsionTb = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        propulsionTbl = new javax.swing.JTable();
+        gearboxTb = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        gearboxTbl = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Kerékpárkölcsönző");
@@ -368,6 +380,82 @@ public class carRentForm extends javax.swing.JFrame {
 
         tableTb.addTab("Kölcsönzések", rentTb);
 
+        brandTb.setLayout(new java.awt.GridLayout(1, 1));
+
+        brandTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(brandTbl);
+
+        brandTb.add(jScrollPane4);
+
+        tableTb.addTab("Márkák", brandTb);
+
+        colorTb.setLayout(new java.awt.GridLayout(1, 1));
+
+        colorTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(colorTbl);
+
+        colorTb.add(jScrollPane5);
+
+        tableTb.addTab("Szinek", colorTb);
+
+        propulsionTb.setLayout(new java.awt.GridLayout(1, 1));
+
+        propulsionTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(propulsionTbl);
+
+        propulsionTb.add(jScrollPane6);
+
+        tableTb.addTab("Váltó típusok", propulsionTb);
+
+        gearboxTb.setLayout(new java.awt.GridLayout(1, 1));
+
+        gearboxTbl.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane7.setViewportView(gearboxTbl);
+
+        gearboxTb.add(jScrollPane7);
+
+        tableTb.addTab("Meghajtás típusok", gearboxTb);
+
         jPanel11.add(tableTb);
 
         centerPnl.add(jPanel11, java.awt.BorderLayout.CENTER);
@@ -416,13 +504,19 @@ public class carRentForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel brandTb;
+    private javax.swing.JTable brandTbl;
     private javax.swing.JPanel carTb;
     private javax.swing.JTable carTbl;
     private javax.swing.JPanel centerPnl;
+    private javax.swing.JPanel colorTb;
+    private javax.swing.JTable colorTbl;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JPanel eastPnl;
     private javax.swing.JButton editBtn;
     private javax.swing.JButton exitBtn;
+    private javax.swing.JPanel gearboxTb;
+    private javax.swing.JTable gearboxTbl;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -444,7 +538,13 @@ public class carRentForm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JPanel northPnl;
+    private javax.swing.JPanel propulsionTb;
+    private javax.swing.JTable propulsionTbl;
     private javax.swing.JPanel rentTb;
     private javax.swing.JTable rentTbl;
     private javax.swing.JPanel renterTb;
@@ -508,5 +608,37 @@ public class carRentForm extends javax.swing.JFrame {
     
     public void setStatusLbl( String text ) {
         statusLbl.setText( text );
+    }
+
+    public JPanel getBrandTb() {
+        return brandTb;
+    }
+
+    public JTable getBrandTbl() {
+        return brandTbl;
+    }
+
+    public JPanel getColorTb() {
+        return colorTb;
+    }
+
+    public JTable getColorTbl() {
+        return colorTbl;
+    }
+
+    public JPanel getGearboxTb() {
+        return gearboxTb;
+    }
+
+    public JTable getGearboxTbl() {
+        return gearboxTbl;
+    }
+
+    public JPanel getPropulsionTb() {
+        return propulsionTb;
+    }
+
+    public JTable getPropulsionTbl() {
+        return propulsionTbl;
     }
 }

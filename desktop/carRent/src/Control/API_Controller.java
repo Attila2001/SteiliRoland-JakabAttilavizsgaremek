@@ -39,6 +39,34 @@ public class API_Controller {
         
         return rents;
     }
+     public Vector<Vector<Object>> getBrands() {
+        Vector<Vector<Object>> brands = new Vector<>();
+        
+        brands = APIMdl.tryBrands();
+        
+        return brands;
+    }
+     public Vector<Vector<Object>> getColors() {
+        Vector<Vector<Object>> colors = new Vector<>();
+        
+        colors = APIMdl.tryColors();
+        
+        return colors;
+    }
+     public Vector<Vector<Object>> getGearboxes() {
+        Vector<Vector<Object>> gearboxes = new Vector<>();
+        
+        gearboxes = APIMdl.tryGearboxes();
+        
+        return gearboxes;
+    }
+     public Vector<Vector<Object>> getPropulsions() {
+        Vector<Vector<Object>> propulsions = new Vector<>();
+        
+        propulsions = APIMdl.tryPropulsions();
+        
+        return propulsions;
+    }
     
     public void setId(String id) {
         this.id = id;
@@ -55,18 +83,13 @@ public class API_Controller {
         boolean success = APIMdl.tryDeleteRents(token, id);
         return success;
     }
-    public Boolean UpdateRenter(){
-        boolean success = APIMdl.tryUpdateRenters(token, id);
+    public Boolean DeleteBrand() {
+        boolean success = APIMdl.tryDeleteBrands(token, id);
         return success;
     }
-    public Boolean UpdateCar(){
-        boolean success = APIMdl.tryUpdateCars(token, id);
+    public Boolean DeleteColor() {
+        boolean success = APIMdl.tryDeleteColors(token, id);
         return success;
     }
-    public Boolean UpdateRent(){
-        boolean success = APIMdl.tryUpdateRents(token, id);
-        return success;
-    }
-    
     
 }

@@ -4,7 +4,7 @@ import { Vehicle } from '../../shared/interfaces/vehicle';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthGuard } from '../../shared/auth.guard';
 import { AuthService } from '../../shared/auth.service';
-import { carModel } from './car.model';
+import { carModel } from '../../models/car.model';
 @Component({
   selector: 'app-vehicles',
   templateUrl: './vehicles.component.html',

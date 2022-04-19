@@ -22,16 +22,15 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 this.registerForm = new FormGroup({
-  user: new FormControl('',Validators.required),
-  email: new FormControl('',[Validators.required, Validators.email]),
-  pass: new FormControl('',Validators.required),
-  pass2: new FormControl('',Validators.required),
+  user: new FormControl('',[Validators.required,Validators.pattern("[a-zA-Z]+"), Validators.minLength(5)]),
+  email: new FormControl('',[Validators.required, Validators.email,Validators.minLength(5) ,Validators.maxLength(255)]),
+  pass: new FormControl('',[Validators.required,Validators.minLength(5)]),
+  pass2: new FormControl('',[Validators.required,Validators.minLength(5)]),
 });
   }
   register(){
     let user = this.registerForm.value.user;
     let email = this.registerForm.value.email;
-    // let phone = this.registerForm.value.phone;
     let pass = this.registerForm.value.pass;
     let pass2 = this.registerForm.value.pass2;
     this.auth.register(user,email,pass,pass2)

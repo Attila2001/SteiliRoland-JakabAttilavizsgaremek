@@ -18,10 +18,10 @@
                       <a class="nav-link btn" routerLink="/register" routerLinkActive="active">Regisztráció</a>
                     </li>
                   
-                    <li *ngIf="isLoggedIn()" class="nav-item  ">
+                    <li *ngIf="!isLoggedIn()" class="nav-item  ">
                       <a class="nav-link btn" (click)="logout()" routerLink="/" >kijelentkezés</a>
                     </li>
-                    <li *ngIf="isLoggedIn()" class="nav-item">
+                    <li *ngIf="!isLoggedIn()" class="nav-item">
                       <a class="nav-link btn" routerLink="/vehicles">Új autó felvétele</a>
                     </li>  
                  

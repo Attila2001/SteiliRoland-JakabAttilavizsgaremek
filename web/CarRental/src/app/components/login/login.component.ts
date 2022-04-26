@@ -28,13 +28,15 @@ this.loginForm = new FormGroup({
     console.log(user,pass);
     this.auth.login(user,pass)
     .subscribe(res =>{
-      console.log(res.token);
-      
-        localStorage.setItem('currentuser', 
-        JSON.stringify({token: res.token, name: res.name})
-        );
-        this.router.navigate(['main']);
+      console.log(res.data.token);
+      console.log(res.success);
+
+      if (res.success) {
+        localStorage.setItem('currentUser', JSON.stringify({ token: res.data.token, user: res.data.user }));
+        this.router.navigate([''])
+      }else {
+        alert('A belépés sikertelen!')
       }
-    );
+    })
   }
 }

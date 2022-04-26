@@ -14,7 +14,7 @@ export class AuthService {
     ) { }
 
   login(user: string, pass: string) {
-    
+
     let authData = {
       name: user,
       password: pass
@@ -25,10 +25,10 @@ export class AuthService {
     });
     let httpOption = {
       headers: headerObj
-    };    
+    };
     let endpoint = 'login';
     let url = this.host + endpoint;
-    
+
     return this.http.post<any>(url, data, httpOption)
     .pipe(map( (res:any) => {
       return res;
@@ -41,15 +41,15 @@ export class AuthService {
     let data:any = localStorage.getItem('currentUser');
     localStorage.removeItem('currentUser');
     let currentUser = JSON.parse(data);
-    let token = currentUser.token; 
-       
+    let token = currentUser.token;
+
     let headerObj = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
     });
     let httpOption = {
       headers: headerObj
-    };    
+    };
     let endpoint = 'logout';
     let url = this.host + endpoint;
     return this.http.post<any>(url, '', httpOption)
@@ -62,7 +62,7 @@ export class AuthService {
   isLoggedIn() {
     if (localStorage.getItem('currentUser') === null) {
       return false;
-    }    
+    }
     let data:any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(data);
     let token = currentUser.token;

@@ -11,21 +11,33 @@
                   <li class="nav-item">
                       <a class="nav-link btn" routerLink="/main">Főoladal</a>
                   </li>
-                  <li *ngIf="!isLoggedIn()" class="nav-item">
-                      <a class="nav-link btn" routerLink="/login" routerLinkActive="active">Belépés</a>
-                    </li>
-                    <li *ngIf="!isLoggedIn()" class="nav-item">
-                      <a class="nav-link btn" routerLink="/register" routerLinkActive="active">Regisztráció</a>
-                    </li>
-
-                    <li *ngIf="isLoggedIn()" class="nav-item ">
-                      <a class="nav-link btn" (click)="logout()" routerLink="/" >kijelentkezés</a>
-                    </li>
+      
                     <li *ngIf="isLoggedIn()" class="nav-item">
-                      <a class="nav-link btn" routerLink="/vehicles">Új autó felvétele</a>
+                      <a class="nav-link btn " routerLink="/vehicles">Új autó felvétele</a>
                     </li>
-
               </ul>
+
+              <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="../assets/valami.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+                  <strong></strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                  <li><a class="dropdown-item" routerLink="/settings">Beállítások</a></li>
+                  <li><a class="dropdown-item" routerLink="/profil">profil</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li *ngIf="!isLoggedIn()" class="nav-item">
+                    <a class="dropdown-item" routerLink="/login" routerLinkActive="active">bejelentkezés</a>
+                  </li>
+                  <li *ngIf="!isLoggedIn()" class="nav-item">
+                    <a class="dropdown-item" routerLink="/register" routerLinkActive="active">Regisztráció</a>
+                  </li>
+                  <li *ngIf="isLoggedIn()" class="nav-item ">
+                    <a class="dropdown-item" (click)="logout()" routerLink="/" >kijelentkezés</a>
+                  </li>
+                </ul>
+              </div>
+             
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="keresés" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">keresés</button>
@@ -34,9 +46,7 @@
           </div>
         </nav>
 
-
-
-
+ 
 
 
 <div>

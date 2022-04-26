@@ -15,6 +15,8 @@ import { CarsComponent } from './components/cars/cars.component';
 import { MainComponent } from './components/main/main.component';
 import { OldcardComponent } from './components/cards/oldcard/oldcard.component';
 import { NewcardComponent } from './components/cards/newcard/newcard.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { NewcardComponent } from './components/cards/newcard/newcard.component';
     MainComponent,
     OldcardComponent,
     NewcardComponent,
+    SettingsComponent,
+    ProfilComponent,
 
 
   ],

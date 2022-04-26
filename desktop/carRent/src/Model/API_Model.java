@@ -79,6 +79,7 @@ public class API_Model {
         
         OutputStream stream = conn.getOutputStream();
         stream.write(out);
+        int responseCode = conn.getResponseCode();
     }
     
        public Vector<Vector<Object>> tryRenters() {
@@ -429,17 +430,16 @@ public class API_Model {
         }
          return propulsions;
        }
-       public Boolean tryDeleteRenters(String token,String id){
-            boolean success =false;
+       public void tryDeleteRenters(String token,String id){
+           
             try{
-                success = DeleteRenters(token,id);
+                 DeleteRenters(token,id);
 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
-            return success;
        }
-       private Boolean DeleteRenters(String token, String id) throws Exception{
+       private void DeleteRenters(String token, String id) throws Exception{
            URL url = new URL("http://localhost:8000/api/renters/" + id);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         
@@ -449,12 +449,10 @@ public class API_Model {
 
         http.connect();
         
-        boolean success = false;
         String text = "";
         int responseCode = http.getResponseCode();
         
         if(responseCode == 200) {
-            success = true;
             text = new String(
                 http.getInputStream().readAllBytes(), 
                 StandardCharsets.UTF_8);
@@ -462,20 +460,18 @@ public class API_Model {
             throw new RuntimeException("Http válasz: " + responseCode);
         }
         
-        return success;
        }
        
-       public Boolean tryDeleteCars(String token,String id){
+       public void tryDeleteCars(String token,String id){
             boolean success =false;
             try{
-                success = DeleteCars(token,id);
+                DeleteCars(token,id);
 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
-            return success;
        }
-       private Boolean DeleteCars(String token, String id) throws Exception{
+       private void DeleteCars(String token, String id) throws Exception{
            URL url = new URL("http://localhost:8000/api/cars/" + id);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         
@@ -490,27 +486,23 @@ public class API_Model {
         int responseCode = http.getResponseCode();
         
         if(responseCode == 200) {
-            success = true;
             text = new String(
                 http.getInputStream().readAllBytes(), 
                 StandardCharsets.UTF_8);
         }else {
             throw new RuntimeException("Http válasz: " + responseCode);
         }
-        return success;
        }
        
-       public Boolean tryDeleteRents(String token,String id){
-            boolean success =false;
+       public void tryDeleteRents(String token,String id){
             try{
-                success = DeleteRents(token,id);
+                DeleteRents(token,id);
 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
-            return success;
        }
-       private Boolean DeleteRents(String token, String id) throws Exception{
+       private void DeleteRents(String token, String id) throws Exception{
            URL url = new URL("http://localhost:8000/api/rents/" + id);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         
@@ -520,32 +512,28 @@ public class API_Model {
 
         http.connect();
         
-        boolean success = false;
         String text = "";
         int responseCode = http.getResponseCode();
         
         if(responseCode == 200) {
-            success = true;
+            
             text = new String(
                 http.getInputStream().readAllBytes(), 
                 StandardCharsets.UTF_8);
         }else {
             throw new RuntimeException("Http válasz: " + responseCode);
         }
-        return success;
        }
        
-       public Boolean tryDeleteBrands(String token,String id){
-            boolean success =false;
+       public void tryDeleteBrands(String token,String id){
             try{
-                success = DeleteBrands(token,id);
+                DeleteBrands(token,id);
 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
-            return success;
        }
-       private Boolean DeleteBrands(String token, String id) throws Exception{
+       private void DeleteBrands(String token, String id) throws Exception{
            URL url = new URL("http://localhost:8000/api/brands/" + id);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         
@@ -555,32 +543,28 @@ public class API_Model {
 
         http.connect();
         
-        boolean success = false;
         String text = "";
         int responseCode = http.getResponseCode();
         
         if(responseCode == 200) {
-            success = true;
             text = new String(
                 http.getInputStream().readAllBytes(), 
                 StandardCharsets.UTF_8);
         }else {
             throw new RuntimeException("Http válasz: " + responseCode);
         }
-        return success;
        }
        
-       public Boolean tryDeleteColors(String token,String id){
-            boolean success =false;
+       public void tryDeleteColors(String token,String id){
+           
             try{
-                success = DeleteColors(token,id);
+                DeleteColors(token,id);
 
             }catch(Exception ex){
                 ex.printStackTrace();
             }
-            return success;
        }
-       private Boolean DeleteColors(String token, String id) throws Exception{
+       private void DeleteColors(String token, String id) throws Exception{
            URL url = new URL("http://localhost:8000/api/colors/" + id);
         HttpURLConnection http = (HttpURLConnection) url.openConnection();
         
@@ -590,19 +574,16 @@ public class API_Model {
 
         http.connect();
         
-        boolean success = false;
         String text = "";
         int responseCode = http.getResponseCode();
         
         if(responseCode == 200) {
-            success = true;
             text = new String(
                 http.getInputStream().readAllBytes(), 
                 StandardCharsets.UTF_8);
         }else {
             throw new RuntimeException("Http válasz: " + responseCode);
         }
-        return success;
        }
       
 }

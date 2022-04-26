@@ -71,25 +71,20 @@ public class API_Controller {
     public void setId(String id) {
         this.id = id;
     }
-    public Boolean DeleteRenter() {
-        boolean success = APIMdl.tryDeleteRenters(token, id);
-        return success;
+    public void DeleteRenter() {
+      APIMdl.tryDeleteRenters(token, id);
     }
-    public Boolean DeleteCar() {
-        boolean success = APIMdl.tryDeleteCars(token, id);
-        return success;
+    public void DeleteCar() {
+        APIMdl.tryDeleteCars(token, id);
     }
-    public Boolean DeleteRent() {
-        boolean success = APIMdl.tryDeleteRents(token, id);
-        return success;
+    public void DeleteRent() {
+        APIMdl.tryDeleteRents(token, id);
     }
-    public Boolean DeleteBrand() {
-        boolean success = APIMdl.tryDeleteBrands(token, id);
-        return success;
+    public void DeleteBrand() {
+        APIMdl.tryDeleteBrands(token, id);
     }
-    public Boolean DeleteColor() {
-        boolean success = APIMdl.tryDeleteColors(token, id);
-        return success;
+    public void DeleteColor() {
+        APIMdl.tryDeleteColors(token, id);
     }
     
 }

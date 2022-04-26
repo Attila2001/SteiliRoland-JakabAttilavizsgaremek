@@ -51,7 +51,6 @@ public class carRentForm extends javax.swing.JFrame {
         southPnl = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        statusLbl = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         exitBtn = new javax.swing.JButton();
         westPnl = new javax.swing.JPanel();
@@ -85,20 +84,20 @@ public class carRentForm extends javax.swing.JFrame {
         gearboxTbl = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Kerékpárkölcsönző");
+        setTitle("Autó kölcsönző");
         setLocation(new java.awt.Point(500, 300));
         getContentPane().setLayout(new java.awt.GridLayout(1, 1));
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        northPnl.setPreferredSize(new java.awt.Dimension(769, 40));
+        northPnl.setPreferredSize(new java.awt.Dimension(769, 80));
         northPnl.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 5, 12));
 
         searchTf.setPreferredSize(new java.awt.Dimension(150, 30));
         northPnl.add(searchTf);
 
         searchBtn.setText("Keresés");
-        searchBtn.setPreferredSize(new java.awt.Dimension(85, 30));
+        searchBtn.setPreferredSize(new java.awt.Dimension(100, 30));
         northPnl.add(searchBtn);
 
         jPanel1.add(northPnl, java.awt.BorderLayout.NORTH);
@@ -114,7 +113,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         eastPnl.add(jPanel6);
@@ -127,7 +126,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         eastPnl.add(jPanel7);
@@ -135,7 +134,7 @@ public class carRentForm extends javax.swing.JFrame {
         jPanel12.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 15));
 
         saveBtn.setText("Mentés");
-        saveBtn.setPreferredSize(new java.awt.Dimension(85, 30));
+        saveBtn.setPreferredSize(new java.awt.Dimension(100, 30));
         jPanel12.add(saveBtn);
 
         eastPnl.add(jPanel12);
@@ -143,13 +142,13 @@ public class carRentForm extends javax.swing.JFrame {
         jPanel13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 10));
 
         editBtn.setText("Módosítás");
-        editBtn.setPreferredSize(new java.awt.Dimension(85, 30));
+        editBtn.setPreferredSize(new java.awt.Dimension(100, 30));
         jPanel13.add(editBtn);
 
         eastPnl.add(jPanel13);
 
         deleteBtn.setText("Törlés");
-        deleteBtn.setPreferredSize(new java.awt.Dimension(85, 30));
+        deleteBtn.setPreferredSize(new java.awt.Dimension(100, 30));
         jPanel14.add(deleteBtn);
 
         eastPnl.add(jPanel14);
@@ -162,7 +161,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         eastPnl.add(jPanel15);
@@ -175,7 +174,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         eastPnl.add(jPanel16);
@@ -188,7 +187,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         eastPnl.add(jPanel17);
@@ -201,14 +200,14 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 58, Short.MAX_VALUE)
+            .addGap(0, 49, Short.MAX_VALUE)
         );
 
         eastPnl.add(jPanel18);
 
         jPanel1.add(eastPnl, java.awt.BorderLayout.EAST);
 
-        southPnl.setPreferredSize(new java.awt.Dimension(769, 40));
+        southPnl.setPreferredSize(new java.awt.Dimension(769, 80));
         southPnl.setLayout(new java.awt.GridLayout(1, 3));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -219,22 +218,18 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
         );
 
         southPnl.add(jPanel2);
 
         jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 5, 10));
-
-        statusLbl.setText("jLabel1");
-        jPanel3.add(statusLbl);
-
         southPnl.add(jPanel3);
 
         jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 20, 0));
 
         exitBtn.setText("Kilépés");
-        exitBtn.setPreferredSize(new java.awt.Dimension(85, 30));
+        exitBtn.setPreferredSize(new java.awt.Dimension(100, 30));
         jPanel4.add(exitBtn);
 
         southPnl.add(jPanel4);
@@ -251,7 +246,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         westPnlLayout.setVerticalGroup(
             westPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
 
         jPanel1.add(westPnl, java.awt.BorderLayout.WEST);
@@ -284,7 +279,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGap(0, 438, Short.MAX_VALUE)
         );
 
         centerPnl.add(jPanel8, java.awt.BorderLayout.LINE_END);
@@ -314,7 +309,7 @@ public class carRentForm extends javax.swing.JFrame {
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGap(0, 438, Short.MAX_VALUE)
         );
 
         centerPnl.add(jPanel10, java.awt.BorderLayout.LINE_START);
@@ -553,7 +548,6 @@ public class carRentForm extends javax.swing.JFrame {
     private javax.swing.JButton searchBtn;
     private javax.swing.JTextField searchTf;
     private javax.swing.JPanel southPnl;
-    private javax.swing.JLabel statusLbl;
     private javax.swing.JTabbedPane tableTb;
     private javax.swing.JPanel westPnl;
     // End of variables declaration//GEN-END:variables
@@ -606,10 +600,6 @@ public class carRentForm extends javax.swing.JFrame {
         return tableTb;
     }
     
-    public void setStatusLbl( String text ) {
-        statusLbl.setText( text );
-    }
-
     public JPanel getBrandTb() {
         return brandTb;
     }

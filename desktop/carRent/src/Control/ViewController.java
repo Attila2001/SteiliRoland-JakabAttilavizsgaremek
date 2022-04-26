@@ -48,6 +48,9 @@ public class ViewController {
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getRenterTbl().setModel( tablMdl );
+            carFrm.getDeleteBtn().setVisible(true);
+            carFrm.getEditBtn().setVisible(true);
+            carFrm.getSaveBtn().setVisible(true);
         }   
          case 1 ->{
             
@@ -56,6 +59,9 @@ public class ViewController {
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getCarTbl().setModel( tablMdl );
+            carFrm.getDeleteBtn().setVisible(true);
+            carFrm.getEditBtn().setVisible(true);
+            carFrm.getSaveBtn().setVisible(true);
             
         }
          case 2 ->{
@@ -65,6 +71,9 @@ public class ViewController {
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getRentTbl().setModel( tablMdl );
+            carFrm.getDeleteBtn().setVisible(true);
+            carFrm.getEditBtn().setVisible(true);
+            carFrm.getSaveBtn().setVisible(true);
         }
          case 3 ->{
             columnNames = viewMdl.getBrandColumnNames();
@@ -72,6 +81,9 @@ public class ViewController {
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getBrandTbl().setModel( tablMdl );
+            carFrm.getDeleteBtn().setVisible(true);
+            carFrm.getEditBtn().setVisible(true);
+            carFrm.getSaveBtn().setVisible(true);
          }
          case 4 ->{
             columnNames = viewMdl.getColorColumnNames();
@@ -79,6 +91,9 @@ public class ViewController {
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
             carFrm.getColorTbl().setModel( tablMdl );
+            carFrm.getDeleteBtn().setVisible(true);
+            carFrm.getEditBtn().setVisible(true);
+            carFrm.getSaveBtn().setVisible(true);
          }
          case 5 ->{
             columnNames = viewMdl.getGearboxColumnNames();

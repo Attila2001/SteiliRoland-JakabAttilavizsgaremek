@@ -692,8 +692,8 @@
                     <Container class="javax.swing.JPanel" name="propulsionTb">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="V&#xe1;lt&#xf3; t&#xed;pusok">
-                            <Property name="tabTitle" type="java.lang.String" value="V&#xe1;lt&#xf3; t&#xed;pusok"/>
+                          <JTabbedPaneConstraints tabName="Meghajt&#xe1;s t&#xed;pusok">
+                            <Property name="tabTitle" type="java.lang.String" value="Meghajt&#xe1;s t&#xed;pusok"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>
@@ -753,8 +753,8 @@
                     <Container class="javax.swing.JPanel" name="gearboxTb">
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                          <JTabbedPaneConstraints tabName="Meghajt&#xe1;s t&#xed;pusok">
-                            <Property name="tabTitle" type="java.lang.String" value="Meghajt&#xe1;s t&#xed;pusok"/>
+                          <JTabbedPaneConstraints tabName="V&#xe1;lt&#xf3; t&#xed;pusok">
+                            <Property name="tabTitle" type="java.lang.String" value="V&#xe1;lt&#xf3; t&#xed;pusok"/>
                           </JTabbedPaneConstraints>
                         </Constraint>
                       </Constraints>

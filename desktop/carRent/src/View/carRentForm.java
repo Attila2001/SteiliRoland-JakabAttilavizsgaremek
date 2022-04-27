@@ -430,7 +430,7 @@ public class carRentForm extends javax.swing.JFrame {
 
         propulsionTb.add(jScrollPane6);
 
-        tableTb.addTab("Váltó típusok", propulsionTb);
+        tableTb.addTab("Meghajtás típusok", propulsionTb);
 
         gearboxTb.setLayout(new java.awt.GridLayout(1, 1));
 
@@ -449,7 +449,7 @@ public class carRentForm extends javax.swing.JFrame {
 
         gearboxTb.add(jScrollPane7);
 
-        tableTb.addTab("Meghajtás típusok", gearboxTb);
+        tableTb.addTab("Váltó típusok", gearboxTb);
 
         jPanel11.add(tableTb);
 

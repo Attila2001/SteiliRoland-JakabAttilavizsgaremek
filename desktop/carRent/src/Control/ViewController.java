@@ -96,21 +96,22 @@ public class ViewController {
             carFrm.getSaveBtn().setVisible(true);
          }
          case 5 ->{
-            columnNames = viewMdl.getGearboxColumnNames();
-            tableData = APICtr.getGearboxes();
+           columnNames = viewMdl.getPropulsionColumnNames();
+            tableData = APICtr.getPropulsions();
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
-            carFrm.getGearboxTbl().setModel( tablMdl );
+            carFrm.getPropulsionTbl().setModel( tablMdl );
             carFrm.getDeleteBtn().setVisible(false);
             carFrm.getEditBtn().setVisible(false);
             carFrm.getSaveBtn().setVisible(false);
          }
          case 6 ->{
-            columnNames = viewMdl.getPropulsionColumnNames();
-            tableData = APICtr.getPropulsions();
+            
+             columnNames = viewMdl.getGearboxColumnNames();
+            tableData = APICtr.getGearboxes();
             tableData.add( null );
             TableModel tablMdl = new DefaultTableModel( tableData, columnNames);
-            carFrm.getPropulsionTbl().setModel( tablMdl );
+            carFrm.getGearboxTbl().setModel( tablMdl );
             carFrm.getDeleteBtn().setVisible(false);
             carFrm.getEditBtn().setVisible(false);
             carFrm.getSaveBtn().setVisible(false);

@@ -65,7 +65,7 @@ export class VehiclesComponent implements OnInit {
     let data = JSON.stringify(carData);
     let headerObj = new HttpHeaders({
       'Content-Type':'application/json',
-      'Authorization': `Bearer ${token}`
+      'Authorization': `Bearer {$token}`
     })
     let header = {
       headers: headerObj

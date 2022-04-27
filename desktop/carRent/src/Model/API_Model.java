@@ -231,8 +231,8 @@ public class API_Model {
             rent.add(rentmodel.startdate);
             rent.add(rentmodel.enddate);
             rent.add(rentmodel.deposit);
-            rent.add(rentmodel.renter_id);
-            rent.add(rentmodel.car_id);
+            rent.add(rentmodel.renter);
+            rent.add(rentmodel.car);
             
             rents.add(rent);
             

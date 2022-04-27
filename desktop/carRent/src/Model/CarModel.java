@@ -6,12 +6,12 @@ public class CarModel {
     String platenumber;
     Integer doornumber;
     Integer modelyear;
-    Integer brand_id;
-    Integer color_id;
-    Integer propulsion_id;
-    Integer gearbox_id;
+    String brand_id;
+    String color_id;
+    String propulsion_id;
+    String gearbox_id;
 
-    public CarModel(Integer id,String platenumber,Integer doornumber,Integer modelyear,Integer brand_id,Integer color_id,Integer propulsion_id,Integer gearbox_id) {
+    public CarModel(Integer id,String platenumber,Integer doornumber,Integer modelyear,String brand_id,String color_id,String propulsion_id,String gearbox_id) {
         this.id=id;
         this.platenumber = platenumber;
         this.doornumber = doornumber;

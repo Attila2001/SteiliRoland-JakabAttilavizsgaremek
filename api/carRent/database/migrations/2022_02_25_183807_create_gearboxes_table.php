@@ -23,7 +23,7 @@ return new class extends Migration
         DB::table('gearboxes')->insert(
             [
                 ['name' => 'kézi'],
-                ['name' => 'auto']
+                ['name' => 'automata']
             ]
         );
     }

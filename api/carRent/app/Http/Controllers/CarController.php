@@ -4,11 +4,18 @@ namespace App\Http\Controllers;
 use Validator;
 use App\Models\Car;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 class CarController extends BaseController
 {
     public function index(){
         try {
-            $car=Car::all();
+            $car=DB::table('cars')
+            ->join('propulsions', 'cars.propulsion_id', '=', 'propulsions.id')
+            ->join('gearboxes', 'cars.gearbox_id', '=', 'gearboxes.id')
+            ->join('brands', 'cars.brand_id', '=', 'brands.id')
+            ->join('colors', 'cars.color_id', '=', 'colors.id')
+            ->select('cars.platenumber','cars.doornumber','cars.modelyear','propulsions.name as propulsion type','gearboxes.name as gearbox type','brands.name as brand','colors.name as color')
+             ->get();
             return $this->sendResponse($car, "Autók betöltve.");
         } catch (\Throwable $th) {
             return $this->sendError("Autók betöltése sikertelen", $th);

@@ -5,12 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\Rent;
+use Illuminate\Support\Facades\DB;
 class RentController extends BaseController
 {
     public function index(){
         try {
-            $renters=Rent::all();
-            return $this->sendResponse($renters, "Bérlések betöltve.");
+            $rents=DB::table('rents')
+            ->join('cars', 'rents.car_id', '=', 'cars.id')
+            ->join('renters', 'rents.renter_id', '=','renters.id')
+            ->select('rents.id', 'rents.startdate', 'rents.enddate', 'rents.deposit',
+             'renters.name', 'cars.platenumber')
+             ->get();
+            return $this->sendResponse($rents, "Bérlések betöltve.");
         } catch (\Throwable $th) {
            return $this->sendError("Bérlések betöltése sikertelen", $th);
         }

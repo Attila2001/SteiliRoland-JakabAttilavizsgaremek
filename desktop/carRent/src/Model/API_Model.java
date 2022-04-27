@@ -128,6 +128,7 @@ public class API_Model {
             renter.add(rentermodel.address);
             renter.add(rentermodel.identify);
             
+            
             renters.add(renter);
             
         }

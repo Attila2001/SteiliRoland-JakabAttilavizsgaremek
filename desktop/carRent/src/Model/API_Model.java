@@ -586,5 +586,4 @@ public class API_Model {
             throw new RuntimeException("Http válasz: " + responseCode);
         }
        }
-      
 }

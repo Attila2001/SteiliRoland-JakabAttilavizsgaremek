@@ -11,7 +11,7 @@
                   <li class="nav-item">
                       <a class="nav-link btn" routerLink="/main">Főoladal</a>
                   </li>
-      
+
                     <li *ngIf="isLoggedIn()" class="nav-item">
                       <a class="nav-link btn " routerLink="/vehicles">Új autó felvétele</a>
                     </li>
@@ -23,8 +23,12 @@
                   <strong></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                  <li><a class="dropdown-item" routerLink="/settings">Beállítások</a></li>
-                  <li><a class="dropdown-item" routerLink="/profil">profil</a></li>
+                  <li *ngIf="isLoggedIn()">
+                    <a class="dropdown-item" routerLink="/settings">Beállítások</a>
+                  </li>
+                  <li *ngIf="isLoggedIn()">
+                    <a class="dropdown-item" routerLink="/profil">profil</a>
+                  </li>
                   <li><hr class="dropdown-divider"></li>
                   <li *ngIf="!isLoggedIn()" class="nav-item">
                     <a class="dropdown-item" routerLink="/login" routerLinkActive="active">bejelentkezés</a>
@@ -37,7 +41,7 @@
                   </li>
                 </ul>
               </div>
-             
+
               <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="keresés" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">keresés</button>
@@ -46,7 +50,7 @@
           </div>
         </nav>
 
- 
+
 
 
 <div>

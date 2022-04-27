@@ -14,9 +14,9 @@ export class ApiService {
   addcars(data: any) {
     let dataStore:any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(dataStore);
-    let token = currentUser.token;     
-  
-    console.log("felhasználó: " + currentUser.name);
+    let token = currentUser.token;
+
+    console.log("autó: " + currentUser.cars);
     console.log(data);
 
     let headerObj = new HttpHeaders({
@@ -27,7 +27,7 @@ export class ApiService {
       headers: headerObj
     };
 
-  
+
 
     let endpoint = 'cars';
     return this.http.post<any>(this.host + endpoint, data, httpOption)
@@ -52,7 +52,7 @@ export class ApiService {
   deletecars(id: number) {
     let data:any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(data);
-    let token = currentUser.token;    
+    let token = currentUser.token;
     let headerObj = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
@@ -70,7 +70,7 @@ export class ApiService {
   updatecars(car: any, id: number) {
     let data:any = localStorage.getItem('currentUser');
     let currentUser = JSON.parse(data);
-    let token = currentUser.token;    
+    let token = currentUser.token;
 
     let headerObj = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -79,12 +79,12 @@ export class ApiService {
     const httpOption = {
       headers: headerObj
     };
-    console.log('kocsi frissíétse');
+    console.log('kocsi frissítése');
     let endpoint = 'cars/';
     return this.http.put<any>(this.host + endpoint + id, car, httpOption)
     .pipe(map( res => {
       return res;
     }))
-    
+
   }
 }

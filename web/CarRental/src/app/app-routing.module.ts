@@ -7,7 +7,7 @@ import { CarsComponent } from './components/cars/cars.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
-import { SettingsComponent } from './settings/settings.component';
+import { SettingsComponent } from './components/settings/settings.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { ProfilComponent } from './components/profil/profil.component';
 

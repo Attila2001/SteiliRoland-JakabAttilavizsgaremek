@@ -87,4 +87,26 @@ export class AuthService {
     let url = this.host + endpoint;
       return this.http.post<any>(url,data,header);
   }
+
+  rent(firstname:string,lastname:string ,username:string,email:string,address:string){
+    let authData = {
+
+      firstname:firstname,
+      lastname: lastname,
+      name: username,
+      email: email,
+      address:address,
+    }
+    let data = JSON.stringify(authData);
+    let headerObj = new HttpHeaders({
+      'Content-Type':'application/json'
+    })
+    let header = {
+      headers: headerObj
+    }
+    let endpoint = 'renters';
+    let url = this.host + endpoint;
+      return this.http.post<any>(url,data,header);
+  }
+
 }

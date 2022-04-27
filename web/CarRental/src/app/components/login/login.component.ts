@@ -34,6 +34,7 @@ this.loginForm = new FormGroup({
       if (res.success) {
         localStorage.setItem('currentUser', JSON.stringify({ token: res.data.token, user: res.data.user }));
         this.router.navigate([''])
+        alert('sikeres bejelentkezés!')
       }else {
         alert('A belépés sikertelen!')
       }

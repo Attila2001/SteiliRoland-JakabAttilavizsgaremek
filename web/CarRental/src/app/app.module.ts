@@ -15,8 +15,11 @@ import { CarsComponent } from './components/cars/cars.component';
 import { MainComponent } from './components/main/main.component';
 import { OldcardComponent } from './components/cards/oldcard/oldcard.component';
 import { NewcardComponent } from './components/cards/newcard/newcard.component';
-import { SettingsComponent } from './components/settings/settings.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { RentComponent } from './components/rent/rent.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
+
 
 
 @NgModule({
@@ -30,8 +33,11 @@ import { ProfilComponent } from './components/profil/profil.component';
     MainComponent,
     OldcardComponent,
     NewcardComponent,
-    SettingsComponent,
     ProfilComponent,
+    RentComponent,
+    SettingsComponent,
+    ForgotpasswordComponent,
+
 
 
   ],

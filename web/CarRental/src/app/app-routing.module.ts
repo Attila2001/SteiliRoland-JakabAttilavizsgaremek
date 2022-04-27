@@ -7,13 +7,17 @@ import { CarsComponent } from './components/cars/cars.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { RegisterComponent } from './components/register/register.component';
-import { SettingsComponent } from './components/settings/settings.component';
+import { RentComponent} from './components/rent/rent.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
-  {path: 'profil', component: ProfilComponent},
+  {path: 'forgotpassword', component: ForgotpasswordComponent},
   {path: 'settings', component: SettingsComponent},
+  {path: 'profil', component: ProfilComponent},
+  {path: 'rent', component: RentComponent},
   {path: 'cards', component: CardsComponent},
   {path: 'oldcard', component: OldcardComponent},
   {path: 'newcard', component: NewcardComponent},

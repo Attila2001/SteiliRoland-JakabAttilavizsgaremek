@@ -3,7 +3,7 @@
         <form [formGroup]="vehicleForm" (ngSubmit)="newCar()">
             <div class="mb-3">
               <label for="plate" class="form-label">Rendszám</label>
-              <input type="text" class="form-control" id="plate" formControlName="plate"placeholder="AAA-000">
+              <input type="text" class="form-control" id="plate" formControlName="plate"placeholder="AAA-000" >
               <small *ngIf="vehicleForm.controls['plate'].invalid && vehicleForm.controls['plate'].touched">Rendszám kötelező</small>
             </div>
     
@@ -50,45 +50,7 @@
             <button type="submit" class="btn btn-primary">Új autó hozzáadása</button>
     
       </form>
+      
     </div>
 </div>
-<table  class="table">
 
-    <table class="table">
-  <thead>
-      
-        <tr>
-        <th scope="col">Rendszám:</th>
-        </tr>
-        <tr>
-        <th scope="col">Márka:</th>
-        </tr>
-        <tr>
-        <th scope="col">ajtókszáma:</th>
-        </tr>
-        <tr>
-        <th scope="col">Évjárat:</th>
-        </tr>
-        <tr>
-        <th scope="col">meghajtás:</th>
-        </tr>
-        <tr>
-        <th scope="col">sebességváltó:</th>
-        </tr>
-        <tr>
-        <th scope="col">szín:</th>
-        </tr>   
-
-  </thead>
-
-
-    <tr *ngFor="let vehicle of vehicleList">
-        <td>{{vehicle.plate}}</td>
-        <td>{{vehicle.brand}}</td>
-        <td>{{vehicle.doornumber}}</td>
-        <td>{{vehicle.year}</td>
-        <td>{{vehicle.propulsion}}</td>
-        <td>{{vehicle.gearbox}}</td>
-        <td>{{vehicle.color}}</td>
-    </tr>
-</table>

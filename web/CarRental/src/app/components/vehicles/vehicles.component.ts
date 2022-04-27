@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthGuard } from '../../shared/auth.guard';
 import { AuthService } from '../../shared/auth.service';
 import { carModel } from '../../models/car.model';
+import { ApiService } from '../../shared/api.service';
 @Component({
   selector: 'app-vehicles',
   templateUrl: './vehicles.component.html',
@@ -15,15 +16,16 @@ export class VehiclesComponent implements OnInit {
   vehicleForm !: FormGroup;
   vehicleList:Vehicle[] = [];
   token !: string|null;
-  carsModelObj: carModel = new carModel();
-  cargroups !: any;
-  selectedcargroup = new FormControl('');
+  car = new carModel();
+
 
 
   constructor(
     private http: HttpClient,
     private authGuard: AuthGuard,
-    private auth: AuthService,) 
+    private auth: AuthService,
+    private api: ApiService) 
+    
     { }
 
   ngOnInit(): void {
@@ -39,14 +41,14 @@ export class VehiclesComponent implements OnInit {
     });
   }
   fetchData(){
-    let url = "http://localhost:8000/api/cars"
+    let url = "http://localhost:8000/api/"
     this.http.get<any>(url).subscribe(
       res => {
         this.vehicleList = res;
       });
   }
   newCar(){
-    let url = "http://localhost:8000/api/cars";
+    
     let carData = {
       plate: this.vehicleForm.value.plate,
       doornumber: this.vehicleForm.value.doornumber,
@@ -56,10 +58,6 @@ export class VehiclesComponent implements OnInit {
       brand: this.vehicleForm.value.brand,
       color: this.vehicleForm.value.color,
     }
-    console.log(
-      carData.brand+
-      carData.plate
-      );
     
     let token = this.auth.isLoggedIn();
     console.log(token);
@@ -72,10 +70,13 @@ export class VehiclesComponent implements OnInit {
     let header = {
       headers: headerObj
     }
+
     let endpoint = 'cars';
-    return this.http.post<any>(url,data,header).subscribe(res=>{
-      console.log(res);
-    });
+    let url = this.host + endpoint;
+    return this.http.post<any>(url,data,header)
+
+    
   }
+
 
 }

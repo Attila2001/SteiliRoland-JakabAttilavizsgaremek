@@ -1,9 +1,9 @@
 export class carModel {
-    plate: string = '';
-    doornumber: string = '';
-    year: string = '';
-    propulsion: string = '';
-    gearbox: string = '';
-    brand: string = '';
-    color: string = '';
+    plate: any;
+    doornumber: any;
+    year: any;
+    propulsion: any;
+    gearbox: any;
+    brand: any;
+    color: any;
 }

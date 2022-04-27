@@ -29,9 +29,12 @@
                   <li *ngIf="isLoggedIn()">
                     <a class="dropdown-item" routerLink="/profil">profil</a>
                   </li>
+                  <li *ngIf="isLoggedIn()">
+                    <a class="dropdown-item" routerLink="/forgotpassword">jelszó és Felhasználónév módósítás</a>
+                  </li>
                   <li><hr class="dropdown-divider"></li>
                   <li *ngIf="!isLoggedIn()" class="nav-item">
-                    <a class="dropdown-item" routerLink="/login" routerLinkActive="active">bejelentkezés</a>
+                    <a class="dropdown-item" routerLink="/login" routerLinkActive="active">Bejelentkezés</a>
                   </li>
                   <li *ngIf="!isLoggedIn()" class="nav-item">
                     <a class="dropdown-item" routerLink="/register" routerLinkActive="active">Regisztráció</a>
